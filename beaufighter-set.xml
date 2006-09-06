@@ -1,0 +1,353 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+Beaufighter simulation config. This files ties together all the components
+used by FGFS to represent the Beaufighter. Components include the flight data 
+model, instrument panel, and external 3D model.
+
+May 2006 Detlef Faber 
+
+http://www.sol2500.net/flightgear
+
+don@sol2500.net
+************************************************************************
+-->
+
+<PropertyList>
+
+ <sim>
+
+  <description>Beaufighter TF X</description>
+  <author>Detlef Faber</author>
+  <status>beta</status>
+  <flight-model>yasim</flight-model>
+  <aero>beaufighter</aero>
+  <fuel-fraction>0.50</fuel-fraction>
+
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+  <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+  <sound>
+   <path>Aircraft/p51d/p51d-sound.xml</path>
+  </sound>
+
+  <submodels> 
+    <serviceable type="bool">true</serviceable>
+    <path>Aircraft/beaufighter/Models/submodels.xml</path>
+  </submodels>
+
+  <panel>
+  <path>Aircraft/Generic/Panels/generic-vfr-panel.xml</path>
+  <visibility>false</visibility>
+  </panel>
+
+  <model>
+   <path>Aircraft/beaufighter/Models/beaufighter.xml</path>
+  </model> 
+  <number-views type="int" archive="y">7</number-views>
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+    <x-offset-m archive="y" type="double">0.0</x-offset-m>
+    <y-offset-m archive="y" type="double">1.0</y-offset-m>
+    <z-offset-m archive="y" type="double">2.6</z-offset-m>
+    <pitch-offset-deg>-17.5</pitch-offset-deg>
+   </config>
+  </view>
+
+  <view n="1">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="2">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="3">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="4">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="5">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
+   </config>
+  </view>
+  <view n="6">
+   <name>Operator view</name>
+   <type>lookfrom</type>
+   <internal archive="y">true</internal>
+    <config>
+        <from-model type="bool">true</from-model>
+        <from-model-idx type="int">0</from-model-idx>
+        <ground-level-nearplane-m type="double">0.05f</ground-level-nearplane-m>
+        <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        <default-pitch-deg type="double">0</default-pitch-deg>
+        <default-heading-deg type="double">0</default-heading-deg>
+        <front-direction-deg type="double">0</front-direction-deg>
+     <x-offset-m archive="y" type="double">0.0</x-offset-m>
+     <y-offset-m archive="y" type="double">1.3</y-offset-m>
+     <z-offset-m archive="y" type="double">6.2</z-offset-m>
+     <pitch-offset-deg>3</pitch-offset-deg>
+    </config>
+  </view>
+
+
+ <autopilot>
+   <config>
+     <min-climb-speed-kt type="float">70.0</min-climb-speed-kt>
+     <best-climb-speed-kt type="float">75.0</best-climb-speed-kt>
+     <target-climb-rate-fpm type="float">500.0</target-climb-rate-fpm>
+     <target-descent-rate-fpm type="float">1000.0</target-descent-rate-fpm>
+     <elevator-adj-factor type="float">4000.0</elevator-adj-factor>
+     <integral-contribution type="float">0.01</integral-contribution>
+     <zero-pitch-throttle type="float">0.45</zero-pitch-throttle>
+     <zero-pitch-trim-full-throttle type="float">0.14</zero-pitch-trim-full-throttle>
+   </config>
+ </autopilot>
+
+  <hud>
+   <enable3d>false</enable3d>
+  </hud>
+
+  <help>
+    <key>
+      <name>C</name>
+      <desc>toggle cockpit door</desc>
+    </key>
+    <key>
+      <name>F</name>
+      <desc>toggle forward fuselage door</desc>
+    </key>
+    <key>
+      <name>D</name>
+      <desc>toggle rear fuselage door</desc>
+    </key>
+    <key>
+      <name>Ctrl-B</name>
+      <desc>toggle engine boost</desc>
+    </key>
+    <key>
+      <name>Ctrl-L</name>
+      <desc>toggle Tailwheel lock</desc>
+    </key>
+    <key>
+      <name>J</name>
+      <desc>release Torpedo</desc>
+    </key>
+    <key>
+      <name>H</name>
+      <desc>fire Rockets</desc>
+    </key>
+    <text>Bristol Beaufighter TFX
+Select Weapon Loadout via the Fuel and Payload Dialog. Note that Beaufighters never carried both, Rockets and Torpedo. First the rocket armed Beaufighters attacked with Cannons and Rockets to keep the Anti Aircraft guns down while the heavy Torpedo armed Aircraft made their run.
+
+---Take off---
+With Torpedo loaded, take off with Flaps one Click down. Lift Tailwheel early and take off at 120 mph (135 with Torpedo loaded)
+---Cruise---
+At heigths at or above 15000 ft you may engage Engine Boost.
+---Landing---
+Approach at 140 mph with Flaps down (155 with Torpedo loaded). Treshold speed is about 110 mph. </text>
+  </help>
+
+
+  <weight n="0">
+      <name>Center</name>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0</lbs></opt>
+      <opt><name>Torpedo</name><lbs>1700.0</lbs></opt>
+  </weight>
+
+  <weight n="1">
+      <name>Left Wing</name>
+      <weight-lb type="double">0.0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0.0</lbs></opt>
+      <opt><name>Rockets</name><lbs>260.0</lbs></opt>
+  </weight>
+
+  <weight n="2">
+      <name>Right Wing</name>
+      <weight-lb type="double">0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0.0</lbs></opt>
+      <opt><name>Rockets</name><lbs>260.0</lbs></opt>
+  </weight>
+
+ </sim>
+
+
+
+
+
+ <!-- set prop for the manual "bookmark" arrow on the remote compas -->
+ <instrumentation>
+    <magnetic-compass>
+       <bookmark-heading-deg type="double">43.0</bookmark-heading-deg>
+    </magnetic-compass>
+ </instrumentation>
+
+ <!-- set up control properties for YASim -->
+ <controls>
+   <armament>
+     <station>
+       <loaded type="bool">true</loaded>
+     </station>
+   </armament>
+   <engines>
+      <engine n="0">
+        <magnetos>3</magnetos>
+        <boost type="double">0.0</boost>
+      </engine>
+      <engine n="1">
+        <magnetos>3</magnetos>
+        <boost type="double">0.0</boost>
+      </engine>
+   </engines>
+   <gear>
+     <tailwheel-lock>false</tailwheel-lock>
+     <rdoor-pos-norm type="float">0.0</rdoor-pos-norm>
+     <cdoor-pos-norm type="float">0.0</cdoor-pos-norm>
+     <fdoor-pos-norm type="float">0.0</fdoor-pos-norm>
+  </gear>
+
+
+ </controls>
+ <engines>
+  <engine>
+   <rpm type="double">700</rpm>
+  </engine>
+  <engine>
+   <rpm type="double">700</rpm>
+  </engine>
+ </engines>  
+ <!-- map key for booster (supercharger) -->
+ <input>
+    <keyboard>
+      <key n="2">
+        <name>Ctrl-B</name>
+        <desc>Toggle engine boost.</desc>
+        <binding>
+          <command>property-adjust</command>
+          <property>/controls/engines/engine[0]/boost</property>
+          <step type="double">0.5</step>
+          <min type="double">0.0</min>
+          <max type="double">1.5</max>
+        </binding>
+        <binding>
+          <condition>
+          <greater-than>
+            <property>/controls/engines/engine[0]/boost</property>
+            <value type="double">1.0001</value>
+          </greater-than>
+          </condition>
+          <command>property-assign</command>
+          <property>/controls/engines/engine[0]/boost</property>
+          <value type="double">0.0</value>
+        </binding>
+        <binding> 	 
+          <condition> 	 
+          <greater-than> 	 
+            <property>/controls/engines/engine[0]/boost</property> 	 
+            <value type="double">0.55</value> 	 
+          </greater-than> 	 
+          </condition> 	 
+          <command>property-assign</command> 	 
+          <property>/controls/engines/engine[0]/boost</property> 	 
+          <value type="double">1.0</value> 	 
+        </binding>
+      </key>
+
+<key n="12"> 
+          <name>Ctrl-L</name>
+          <desc>Toggle Tailwheel Lock.</desc>
+          <binding> 
+            <command>property-toggle</command>
+            <property>controls/gear/tailwheel-lock</property>
+          </binding>
+      </key>
+
+      <key n="67">
+        <name>C</name>
+        <desc>Toggle Cockpit door</desc>
+        <binding n="0">
+          <command>nasal</command>
+          <script>beaufighter.toggle_cdoor()</script>
+        </binding>
+      </key>
+      <key n="70">
+        <name>F</name>
+        <desc>Toggle Front-Door</desc>
+        <binding n="0">
+          <command>nasal</command>
+          <script>beaufighter.toggle_fdoor()</script>
+        </binding>
+      </key>
+      <key n="68">
+        <name>D</name>
+        <desc>Toggle Rear-Door</desc>
+        <binding n="0">
+          <command>nasal</command>
+          <script>beaufighter.toggle_rdoor()</script>
+        </binding>
+      </key>
+      <key n="74">
+        <name>J</name>
+        <desc>Release Torpedo</desc>
+        <binding n="0">
+          <command>property-assign</command>
+          <property>/controls/armament/station/release-all</property>
+          <value type="bool">true</value>
+        </binding>
+      </key>
+
+      <key n="72">
+        <name>H</name>
+        <desc>Fire Rockets</desc>
+          <binding n="0">
+          <command>nasal</command>
+          <script>beaufighter.fire_rp()</script>
+        </binding>
+      </key>
+
+     </keyboard>
+ </input>
+<!--
+ <yasim>
+   <weights>
+     <torpedo-lbs>1700.0</torpedo-lbs>
+   </weights>
+ </yasim>
+-->
+
+  <nasal>
+   <beaufighter>
+     <file>Aircraft/beaufighter/beaufighter.nas</file>
+   </beaufighter>
+   <pilot-g>
+     <file>Aircraft/beaufighter/pilot-g.nas</file>
+   </pilot-g>
+<!--
+   <dialog>
+      <file>Aircraft/beaufighter/dialog.nas</file>
+   </dialog>
+-->
+  </nasal>
+
+</PropertyList>
+
+
+
+

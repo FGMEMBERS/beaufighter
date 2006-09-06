@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<path>blaze.ac</path>
+
+ <animation>
+  <type>scale</type>
+  <object-name>noshadow.blaze2</object-name>
+  <property>sim/time/elapsed-sec</property>
+  <factor>2.5</factor>
+  <!-- <offset>0.8</offset> -->
+  <min>0.4</min>
+  <max>0.8</max>
+ </animation>
+
+</PropertyList>
