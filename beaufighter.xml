@@ -170,7 +170,7 @@ YASim aerodynamic model for a Bristol Beaufighter
 </gear>
 
  <!-- left main -->
-<gear x="-2.357" y="-2.9" z="-2.65" compression="0.4" spring="0.7" damp="3.0">
+<gear x="-2.357" y="2.9" z="-2.65" compression="0.4" spring="0.7" damp="3.0">
   <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -179,7 +179,7 @@ YASim aerodynamic model for a Bristol Beaufighter
 </gear>
 
  <!-- right main -->
-<gear x="-2.357" y="2.9" z="-2.65" compression="0.4" spring="0.7" damp="3.0">
+<gear x="-2.357" y="-2.9" z="-2.65" compression="0.4" spring="0.7" damp="3.0">
   <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
