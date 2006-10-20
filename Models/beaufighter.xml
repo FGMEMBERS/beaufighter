@@ -10,14 +10,39 @@
 	<model>
 		<path>Aircraft/beaufighter/Models/equipment.xml</path>
 	</model>
+
  <!-- panel models -->
 
+    <model> 
+      <path>Aircraft/beaufighter/Models/uc-indicator-p.xml</path>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>-0.385</y-m>
+        <z-m>0.38</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/beaufighter/Models/uc-indicator-t.xml</path>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>-0.35</y-m>
+        <z-m>0.38</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/beaufighter/Models/uc-indicator-s.xml</path>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>-0.315</y-m>
+        <z-m>0.38</z-m>
+      </offsets>
+    </model>
     <model> 
       <path>Aircraft/beaufighter/Models/asi.xml</path>
       <offsets> 
         <x-m>1.805</x-m>
         <y-m>-0.11</y-m>
-        <z-m>0.512</z-m>
+        <z-m>0.54</z-m>
       </offsets>
     </model>
     <model> 
@@ -26,7 +51,7 @@
       <offsets> 
         <x-m>1.808</x-m>
         <y-m>0.0</y-m>
-        <z-m>0.512</z-m>
+        <z-m>0.54</z-m>
       </offsets>
     </model>
     <model> 
@@ -34,7 +59,7 @@
       <offsets> 
         <x-m>1.805</x-m>
         <y-m>0.11</y-m>
-        <z-m>0.512</z-m>
+        <z-m>0.54</z-m>
       </offsets>
     </model>
     <model> 
@@ -43,7 +68,7 @@
       <offsets> 
         <x-m>1.805</x-m>
         <y-m>-0.11</y-m>
-        <z-m>0.405</z-m>
+        <z-m>0.435</z-m>
       </offsets>
     </model>
     <model> 
@@ -51,7 +76,7 @@
       <offsets> 
         <x-m>1.805</x-m>
         <y-m>0</y-m>
-        <z-m>0.41</z-m>
+        <z-m>0.44</z-m>
       </offsets>
     </model>
     <model> 
@@ -60,10 +85,136 @@
       <offsets> 
         <x-m>1.805</x-m>
         <y-m>0.11</y-m>
-        <z-m>0.405</z-m>
+        <z-m>0.435</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/beaufighter/Models/fuel_jett_p.xml</path>
+	  <name>Fuel_Jett_Port</name>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>-0.14</y-m>
+        <z-m>0.30</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/beaufighter/Models/fuel_jett_s.xml</path>
+	  <name>Fuel_Jett_Stbd</name>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>-0.07</y-m>
+        <z-m>0.30</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/beaufighter/Models/oil-temp-p.xml</path>
+	  <name>Oil Temp Port</name>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>0.02</y-m>
+        <z-m>0.31</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/beaufighter/Models/oil-temp-s.xml</path>
+	  <name>Oil Temp Stbd</name>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>0.08</y-m>
+        <z-m>0.31</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/beaufighter/Models/fuel-pressure-p.xml</path>
+	  <name>Fuel Pressure Port</name>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>0.13</y-m>
+        <z-m>0.31</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/beaufighter/Models/fuel-pressure-s.xml</path>
+	  <name>Fuel Pressure Stbd</name>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>0.165</y-m>
+        <z-m>0.31</z-m>
+      </offsets>
+    </model>
+ 
+    <model> 
+      <path>Aircraft/beaufighter/Models/oil-pressure-p.xml</path>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>0.20</y-m>
+        <z-m>0.56</z-m>
       </offsets>
     </model>
 
+    <model> 
+      <path>Aircraft/beaufighter/Models/oil-pressure-s.xml</path>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>0.24</y-m>
+        <z-m>0.56</z-m>
+      </offsets>
+    </model>
+
+    <model> 
+      <path>Aircraft/beaufighter/Models/rpm-p.xml</path>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>0.22</y-m>
+        <z-m>0.465</z-m>
+      </offsets>
+    </model>
+
+    <model> 
+      <path>Aircraft/beaufighter/Models/rpm-s.xml</path>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>0.22</y-m>
+        <z-m>0.38</z-m>
+      </offsets>
+    </model>
+
+    <model> 
+      <path>Aircraft/beaufighter/Models/cockpit_dimmer.xml</path>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>0.33</y-m>
+        <z-m>0.52</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/beaufighter/Models/starter.ac</path>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>0.355</y-m>
+        <z-m>0.33</z-m>
+      </offsets>
+    </model>
+
+ <!-- Gun Sight -->
+
+    <model> 
+      <path>Aircraft/beaufighter/Models/rgs.xml</path>
+      <offsets> 
+        <x-m>1.88</x-m>
+        <y-m>0</y-m>
+        <z-m>0.84</z-m>
+        <pitch-deg>-10</pitch-deg>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/beaufighter/Models/rgs-dimmer.xml</path>
+      <offsets> 
+        <x-m>1.845</x-m>
+        <y-m>-0.20</y-m>
+        <z-m>0.70</z-m>
+      </offsets>
+    </model>
 
  <animation>
   <type>rotate</type>
@@ -1113,6 +1264,24 @@
     </offsets>
   </model>
 
-
+ <!-- Hotspots -->
+ <panel>
+  <path>Aircraft/beaufighter/Models/panel-hotspots.xml</path>
+  <bottom-left>
+    <x-m>1.83</x-m>
+    <y-m>-0.571009</y-m>
+    <z-m>0.129482</z-m>
+  </bottom-left>
+  <bottom-right>
+    <x-m>1.83</x-m>
+    <y-m>0.571009</y-m>
+    <z-m>0.129482</z-m>
+  </bottom-right>
+  <top-left>
+    <x-m>1.83</x-m>
+    <y-m>-0.571009</y-m>
+    <z-m>0.713365</z-m>
+  </top-left>
+ </panel>
 
 </PropertyList>
