@@ -28,7 +28,6 @@ fire_rp = func {
 }
 
 
-
 toggle_fdoor = func {
   if(getprop("/controls/gear/fdoor-pos-norm") > 0) {
     interpolate("/controls/gear/fdoor-pos-norm", 0, 3);
@@ -55,3 +54,19 @@ toggle_cdoor = func {
   }
 }
 
+
+toggle_gunsight = func {
+  if(getprop("controls/switches/gun-sight-stow") > 0) {
+    interpolate("controls/switches/gun-sight-stow", 0, 2);
+  } else {
+    interpolate("controls/switches/gun-sight-stow", 1, 2);
+  }
+}
+
+
+fuel_jettison = func(side) {
+  remaining_inner = getprop("consumables/fuel/tank["~side~"]/level-gal_us");
+  remaining_outer = getprop("consumables/fuel/tank["~(side+1)~"]/level-gal_us");
+  interpolate("consumables/fuel/tank["~side~"]/level-gal_us", (remaining_inner-20),5);
+  interpolate("consumables/fuel/tank["~(side+1)~"]/level-gal_us", (remaining_outer-15),5);
+}
