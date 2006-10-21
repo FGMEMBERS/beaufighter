@@ -165,8 +165,8 @@ YASim aerodynamic model for a Bristol Beaufighter
 
 <gear x="-10.565" y="0" z="-0.779" compression="0.2">
   <control-input axis="/controls/gear/tailwheel-lock" control="CASTERING" 
-                 src0="-1.0" src1="1.0"
-                 dst0="0.5" dst1="-0.5"/>
+                 src0="0" src1="1"
+                 dst0="1" dst1="0"/>
 </gear>
 
  <!-- left main -->

@@ -225,7 +225,7 @@ Approach at 140 mph with Flaps down (155 with Torpedo loaded). Threshold speed i
      <jett-s type="int">0</jett-s>
    </fuel>
    <gear>
-     <tailwheel-lock>false</tailwheel-lock>
+     <tailwheel-lock>true</tailwheel-lock>
      <rdoor-pos-norm type="float">0.0</rdoor-pos-norm>
      <cdoor-pos-norm type="float">0.0</cdoor-pos-norm>
      <fdoor-pos-norm type="float">0.0</fdoor-pos-norm>

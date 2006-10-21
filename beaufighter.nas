@@ -1,6 +1,6 @@
 
 drop_torp = func {
-   setprop(string, "sim/weight[0]/selected", "none");
+   setprop("sim/weight[0]/selected", "none");
    setprop("/controls/armament/release-all", 1);
 }
 
