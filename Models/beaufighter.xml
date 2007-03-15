@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- Bristol Beaufighter by Detlef Faber -->
+<!-- Bristol Beaufighter by Detlef Faber, Instruments by AJ MacLeod -->
 
 <PropertyList>
 
@@ -17,7 +17,7 @@
       <path>Aircraft/beaufighter/Models/uc-indicator-p.xml</path>
       <offsets> 
         <x-m>1.805</x-m>
-        <y-m>-0.385</y-m>
+        <y-m>-0.35</y-m>
         <z-m>0.38</z-m>
       </offsets>
     </model>
@@ -25,7 +25,7 @@
       <path>Aircraft/beaufighter/Models/uc-indicator-t.xml</path>
       <offsets> 
         <x-m>1.805</x-m>
-        <y-m>-0.35</y-m>
+        <y-m>-0.315</y-m>
         <z-m>0.38</z-m>
       </offsets>
     </model>
@@ -33,41 +33,57 @@
       <path>Aircraft/beaufighter/Models/uc-indicator-s.xml</path>
       <offsets> 
         <x-m>1.805</x-m>
-        <y-m>-0.315</y-m>
+        <y-m>-0.28</y-m>
         <z-m>0.38</z-m>
       </offsets>
     </model>
-    <model> 
+    <model>
+      <path>Aircraft/beaufighter/Models/beam_approach.xml</path>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>-0.23</y-m>
+        <z-m>0.48</z-m>
+      </offsets>
+    </model>
+    <model>
+      <path>Aircraft/beaufighter/Models/triple.xml</path>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>-0.23</y-m>
+        <z-m>0.22</z-m>
+      </offsets>
+    </model>
+    <model>
       <path>Aircraft/beaufighter/Models/asi.xml</path>
       <offsets> 
         <x-m>1.805</x-m>
-        <y-m>-0.11</y-m>
+        <y-m>-0.1</y-m>
         <z-m>0.54</z-m>
       </offsets>
     </model>
-    <model> 
+    <model>
       <path>Aircraft/beaufighter/Models/attitude.xml</path>
-	  <name>Attitude</name>
-      <offsets> 
+      <name>Attitude</name>
+      <offsets>
         <x-m>1.808</x-m>
         <y-m>0.0</y-m>
         <z-m>0.54</z-m>
       </offsets>
     </model>
-    <model> 
+    <model>
       <path>Aircraft/beaufighter/Models/vsi.xml</path>
       <offsets> 
         <x-m>1.805</x-m>
-        <y-m>0.11</y-m>
+        <y-m>0.1</y-m>
         <z-m>0.54</z-m>
       </offsets>
     </model>
-    <model> 
+    <model>
       <path>Aircraft/beaufighter/Models/altimeter.xml</path>
-	  <name>Altimeter</name>
+      <name>Altimeter</name>
       <offsets> 
         <x-m>1.805</x-m>
-        <y-m>-0.11</y-m>
+        <y-m>-0.1</y-m>
         <z-m>0.435</z-m>
       </offsets>
     </model>
@@ -81,26 +97,26 @@
     </model>
     <model> 
       <path>Aircraft/beaufighter/Models/turn.xml</path>
-	  <name>Turn</name>
+      <name>Turn</name>
       <offsets> 
         <x-m>1.805</x-m>
-        <y-m>0.11</y-m>
+        <y-m>0.1</y-m>
         <z-m>0.435</z-m>
       </offsets>
     </model>
     <model> 
       <path>Aircraft/beaufighter/Models/fuel_jett_p.xml</path>
-	  <name>Fuel_Jett_Port</name>
+      <name>Fuel_Jett_Port</name>
       <offsets> 
         <x-m>1.805</x-m>
         <y-m>-0.14</y-m>
         <z-m>0.30</z-m>
       </offsets>
     </model>
-    <model> 
+    <model>
       <path>Aircraft/beaufighter/Models/fuel_jett_s.xml</path>
-	  <name>Fuel_Jett_Stbd</name>
-      <offsets> 
+      <name>Fuel_Jett_Stbd</name>
+      <offsets>
         <x-m>1.805</x-m>
         <y-m>-0.07</y-m>
         <z-m>0.30</z-m>
@@ -108,60 +124,60 @@
     </model>
     <model> 
       <path>Aircraft/beaufighter/Models/oil-temp-p.xml</path>
-	  <name>Oil Temp Port</name>
-      <offsets> 
+      <name>Oil Temp Port</name>
+      <offsets>
         <x-m>1.805</x-m>
         <y-m>0.02</y-m>
         <z-m>0.31</z-m>
       </offsets>
     </model>
-    <model> 
+    <model>
       <path>Aircraft/beaufighter/Models/oil-temp-s.xml</path>
-	  <name>Oil Temp Stbd</name>
-      <offsets> 
+      <name>Oil Temp Stbd</name>
+      <offsets>
         <x-m>1.805</x-m>
         <y-m>0.08</y-m>
         <z-m>0.31</z-m>
       </offsets>
     </model>
-    <model> 
+    <model>
       <path>Aircraft/beaufighter/Models/fuel-pressure-p.xml</path>
-	  <name>Fuel Pressure Port</name>
-      <offsets> 
+      <name>Fuel Pressure Port</name>
+      <offsets>
         <x-m>1.805</x-m>
         <y-m>0.13</y-m>
         <z-m>0.31</z-m>
       </offsets>
     </model>
-    <model> 
+    <model>
       <path>Aircraft/beaufighter/Models/fuel-pressure-s.xml</path>
-	  <name>Fuel Pressure Stbd</name>
-      <offsets> 
+      <name>Fuel Pressure Stbd</name>
+      <offsets>
         <x-m>1.805</x-m>
         <y-m>0.165</y-m>
         <z-m>0.31</z-m>
       </offsets>
     </model>
- 
-    <model> 
+
+    <model>
       <path>Aircraft/beaufighter/Models/oil-pressure-p.xml</path>
       <offsets> 
         <x-m>1.805</x-m>
-        <y-m>0.20</y-m>
+        <y-m>0.19</y-m>
         <z-m>0.56</z-m>
       </offsets>
     </model>
 
-    <model> 
+    <model>
       <path>Aircraft/beaufighter/Models/oil-pressure-s.xml</path>
-      <offsets> 
+      <offsets>
         <x-m>1.805</x-m>
-        <y-m>0.24</y-m>
+        <y-m>0.23</y-m>
         <z-m>0.56</z-m>
       </offsets>
     </model>
 
-    <model> 
+    <model>
       <path>Aircraft/beaufighter/Models/rpm-p.xml</path>
       <offsets> 
         <x-m>1.805</x-m>
@@ -170,9 +186,9 @@
       </offsets>
     </model>
 
-    <model> 
+    <model>
       <path>Aircraft/beaufighter/Models/rpm-s.xml</path>
-      <offsets> 
+      <offsets>
         <x-m>1.805</x-m>
         <y-m>0.22</y-m>
         <z-m>0.38</z-m>
@@ -180,10 +196,39 @@
     </model>
 
     <model> 
+      <path>Aircraft/beaufighter/Models/air-temp.xml</path>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>0.23</y-m>
+        <z-m>0.30</z-m>
+      </offsets>
+    </model>
+
+    <model> 
+      <path>Aircraft/beaufighter/Models/boost-p.xml</path>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>0.16</y-m>
+        <z-m>0.20</z-m>
+        <pitch-deg>-20</pitch-deg>
+      </offsets>
+    </model>
+
+    <model> 
+      <path>Aircraft/beaufighter/Models/boost-s.xml</path>
+      <offsets> 
+        <x-m>1.805</x-m>
+        <y-m>0.23</y-m>
+        <z-m>0.20</z-m>
+        <pitch-deg>-20</pitch-deg>
+      </offsets>
+    </model>
+
+    <model> 
       <path>Aircraft/beaufighter/Models/cockpit_dimmer.xml</path>
       <offsets> 
         <x-m>1.805</x-m>
-        <y-m>0.33</y-m>
+        <y-m>0.29</y-m>
         <z-m>0.52</z-m>
       </offsets>
     </model>
@@ -210,11 +255,12 @@
     <model> 
       <path>Aircraft/beaufighter/Models/rgs-dimmer.xml</path>
       <offsets> 
-        <x-m>1.845</x-m>
+        <x-m>1.805</x-m>
         <y-m>-0.20</y-m>
-        <z-m>0.70</z-m>
+        <z-m>0.60</z-m>
       </offsets>
     </model>
+
 
  <animation>
   <type>rotate</type>
@@ -249,23 +295,15 @@
    <z>0.0</z>
   </axis>
  </animation>
-
- <animation>
-  <type>select</type>
-  <object-name>leftpropfeather</object-name>
-  <condition>
-    <property>/controls/engines/engine[0]/rpm</property>
-    <value>true</value>
-  </condition>
- </animation>
- <animation>
-  <type>select</type>
-  <object-name>rightpropfeather</object-name>
-  <condition>
-    <property>/controls/engines/engine[1]/rpm</property>
-  </condition>
- </animation>
-
+  <model>
+    <name>pdiskL</name>
+    <path>Aircraft/beaufighter/Models/pdiskL.xml</path>
+    <offsets>
+   <x-m>0.407</x-m>
+   <y-m>-2.896</y-m>
+   <z-m>-0.083</z-m>
+    </offsets>
+  </model>	
  <animation>
   <type>select</type>
   <object-name>leftprop</object-name>
@@ -276,46 +314,15 @@
    </less-than>
   </condition>
  </animation>
-
- <animation>
-  <type>select</type>
-  <object-name>noshadow.leftpdisk</object-name>
-  <object-name>leftpropturn</object-name>
-  <condition>
-   <greater-than>
-    <property>/engines/engine[0]/rpm</property>
-    <value>900</value>
-   </greater-than>
-  </condition>
- </animation>
-
- <animation>
-  <type>spin</type>
-  <object-name>noshadow.leftpdisk</object-name>
-  <object-name>leftpropturn</object-name>
-  <property>/engines/engine[0]/rpm</property>
-  <factor>0.01</factor>
-  <center>
-   <x-m>-0.40</x-m>
-   <y-m>-2.91</y-m>
-   <z-m>-0.085</z-m>
-  </center>
-  <axis>
-   <x>1.0</x>
-   <y>0.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
-
  <animation>
   <type>spin</type>
   <object-name>leftprop</object-name>
   <property>/engines/engine[0]/rpm</property>
   <factor>0.479</factor>
   <center>
-   <x-m>-0.40</x-m>
-   <y-m>-2.91</y-m>
-   <z-m>-0.085</z-m>
+   <x-m>-0.035</x-m>
+   <y-m>-2.896</y-m>
+   <z-m>-0.083</z-m>
   </center>
   <axis>
    <x>1.0</x>
@@ -323,7 +330,15 @@
    <z>0.0</z>
   </axis>
  </animation>
-
+  <model>
+    <name>pdiskR</name>
+    <path>Aircraft/beaufighter/Models/pdiskR.xml</path>
+    <offsets>
+   <x-m>0.407</x-m>
+   <y-m>2.896</y-m>
+   <z-m>-0.083</z-m>
+    </offsets>
+  </model>	
 <animation>
   <type>select</type>
   <object-name>rightprop</object-name>
@@ -334,28 +349,15 @@
    </less-than>
   </condition>
  </animation>
-
- <animation>
-  <type>select</type>
-  <object-name>noshadow.rightpdisk</object-name>
-  <object-name>rightpropturn</object-name>
-  <condition>
-   <greater-than>
-    <property>/engines/engine[1]/rpm</property>
-    <value>900</value>
-   </greater-than>
-  </condition>
- </animation>
-
  <animation>
   <type>spin</type>
   <object-name>rightprop</object-name>
   <property>/engines/engine[1]/rpm</property>
   <factor>0.479</factor>
   <center>
-   <x-m>-0.40</x-m>
-   <y-m>2.91</y-m>
-   <z-m>-0.085</z-m>
+   <x-m>-0.035</x-m>
+   <y-m>2.896</y-m>
+   <z-m>-0.083</z-m>
   </center>
   <axis>
    <x>1.0</x>
@@ -363,25 +365,6 @@
    <z>0.0</z>
   </axis>
  </animation>
-
- <animation>
-  <type>spin</type>
-  <object-name>noshadow.rightpdisk</object-name>
-  <object-name>rightpropturn</object-name>
-  <property>/engines/engine[0]/rpm</property>
-  <factor>0.01</factor>
-  <center>
-   <x-m>-0.40</x-m>
-   <y-m>2.91</y-m>
-   <z-m>-0.085</z-m>
-  </center>
-  <axis>
-   <x>1.0</x>
-   <y>0.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
-
 
  <animation>
   <type>rotate</type>
@@ -1170,7 +1153,7 @@
   <type>rotate</type>
   <object-name>cockpitdoor</object-name>
   <object-name>noshadow.cptdrglass</object-name>
-  <property>/controls/gear/cdoor-pos-norm</property>
+  <property>/controls/doors/cdoor/position-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -1199,7 +1182,7 @@
  <animation>
   <type>rotate</type>
   <object-name>frontdoor</object-name>
-  <property>/controls/gear/fdoor-pos-norm</property>
+  <property>/controls/doors/fdoor/position-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -1228,7 +1211,7 @@
  <animation>
   <type>rotate</type>
   <object-name>reardoor</object-name>
-  <property>/controls/gear/rdoor-pos-norm</property>
+  <property>/controls/doors/rdoor/position-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -1284,4 +1267,84 @@
   </top-left>
  </panel>
 
+  <model> 
+   <path>Aircraft/beaufighter/Models/blaze-lu.xml</path>
+   <name>Blaze-lu</name>
+    <offsets> 
+     <x-m>2.2</x-m>
+     <y-m>-0.54</y-m>
+     <z-m>-0.434</z-m>
+    </offsets>
+  </model>
+  <model> 
+   <path>Aircraft/beaufighter/Models/blaze-ld.xml</path>
+   <name>Blaze-ld</name>
+    <offsets> 
+     <x-m>1.6</x-m>
+     <y-m>-0.45</y-m>
+     <z-m>-0.49</z-m>
+    </offsets>
+  </model>
+  <model> 
+   <path>Aircraft/beaufighter/Models/blaze-ru.xml</path>
+   <name>Blaze-ru</name>
+    <offsets> 
+     <x-m>2.2</x-m>
+     <y-m>0.54</y-m>
+     <z-m>-0.434</z-m>
+    </offsets>
+  </model>
+  <model> 
+   <path>Aircraft/beaufighter/Models/blaze-rd.xml</path>
+   <name>Blaze-rd</name>
+    <offsets> 
+     <x-m>1.6</x-m>
+     <y-m>0.45</y-m>
+     <z-m>-0.49</z-m>
+    </offsets>
+  </model>
+
+<!--Crew-->
+    <model> 
+      <path>Aircraft/beaufighter/Models/pilot.xml</path>
+	  <name>pilot</name>
+      <offsets> 
+        <x-m>2.41</x-m>
+        <y-m>-0.0</y-m>
+        <z-m>0.2</z-m>
+        <pitch-deg>14</pitch-deg>
+      </offsets>
+    </model>
+<animation>
+  <type>select</type>
+  <object-name>pilot</object-name>
+  <condition>
+   <greater-than>
+    <property>/sim/current-view/view-number</property>
+    <value>0.0</value>
+   </greater-than>
+  </condition>
+ </animation>
+
+    <model> 
+      <path>Aircraft/beaufighter/Models/crew.xml</path>
+	  <name>crew</name>
+      <offsets> 
+        <x-m>6.15</x-m>
+        <y-m>0.0</y-m>
+        <z-m>0.6</z-m>
+        <pitch-deg>14</pitch-deg>
+        <heading-deg>180</heading-deg>
+      </offsets>
+    </model>
+ <animation>
+  <type>select</type>
+  <object-name>crew</object-name>
+  <condition>
+   <less-than>
+    <property>/sim/current-view/view-number</property>
+    <value>6.0</value>
+   </less-than>
+  </condition>
+ </animation>
 </PropertyList>

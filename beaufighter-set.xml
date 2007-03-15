@@ -17,7 +17,7 @@ don@sol2500.net
 
  <sim>
 
-  <description>Beaufighter TF X</description>
+  <description>Bristol Beaufighter TF X</description>
   <author>Detlef Faber</author>
   <status>beta</status>
   <flight-model>yasim</flight-model>
@@ -43,6 +43,11 @@ don@sol2500.net
 
   <model>
    <path>Aircraft/beaufighter/Models/beaufighter.xml</path>
+   <crew>
+     <pilot>
+       <visible type="double">1</visible>
+     </pilot>
+   </crew>
   </model> 
   <number-views type="int" archive="y">7</number-views>
   <view n="0">
@@ -85,7 +90,7 @@ don@sol2500.net
    </config>
   </view>
   <view n="6">
-   <name>Operator view</name>
+   <name>interiour view</name>
    <type>lookfrom</type>
    <internal archive="y">true</internal>
     <config>
@@ -105,6 +110,8 @@ don@sol2500.net
 
 
  <autopilot>
+   <htempmode type="bool">false</htempmode>
+   <vtempmode type="bool">false</vtempmode>
    <config>
      <min-climb-speed-kt type="float">70.0</min-climb-speed-kt>
      <best-climb-speed-kt type="float">75.0</best-climb-speed-kt>
@@ -141,6 +148,10 @@ don@sol2500.net
     <key>
       <name>Ctrl-L</name>
       <desc>toggle Tailwheel lock</desc>
+    </key>
+    <key>
+      <name>m/M</name>
+      <desc>Master Arm on/off</desc>
     </key>
     <key>
       <name>J</name>
@@ -205,6 +216,17 @@ Approach at 140 mph with Flaps down (155 with Torpedo loaded). Threshold speed i
 
  <!-- set up control properties for YASim -->
  <controls>
+   <doors>
+     <fdoor>
+        <position-norm type="double">0.0</position-norm>
+     </fdoor>
+     <rdoor>
+        <position-norm type="double">0.0</position-norm>
+     </rdoor>
+     <cdoor>
+        <position-norm type="double">0.0</position-norm>
+     </cdoor>
+   </doors>
    <armament>
      <station>
        <loaded type="bool">true</loaded>
@@ -315,12 +337,48 @@ Approach at 140 mph with Flaps down (155 with Torpedo loaded). Threshold speed i
           <script>beaufighter.toggle_rdoor()</script>
         </binding>
       </key>
+      <key n="109"> 
+        <name>m</name>
+        <desc>Toggle Master Arm on</desc>
+        <binding> 
+          <command>property-adjust</command>
+          <property>/controls/armament/master-arm</property>
+          <step type="double">1</step>
+          <min type="double">0</min>
+          <max type="double">1</max>
+        </binding>
+      </key>
+      <key n="77"> 
+        <name>M</name>
+        <desc>Toggle Master Arm off</desc>
+        <binding> 
+          <command>property-adjust</command>
+          <property>/controls/armament/master-arm</property>
+          <step type="double">-1</step>
+          <min type="double">0</min>
+          <max type="double">1</max>
+        </binding>
+      </key>
+      <key n="101">
+        <name>e</name>
+        <desc>Fire Cannons</desc>
+        <binding>
+          <command>nasal</command>
+          <script>beaufighter.fire_MG()</script>
+        </binding>
+        <mod-up>
+          <binding>
+            <command>nasal</command>
+            <script>beaufighter.stop_MG()</script>
+          </binding>
+        </mod-up>
+      </key>
       <key n="74">
         <name>J</name>
         <desc>Release Torpedo</desc>
         <binding n="0">
-          <command>property-assign</command>
-          <property>/controls/armament/station/release-all</property>
+          <command>nasal</command>
+          <script>beaufighter.drop_torp()</script>
           <value type="bool">true</value>
         </binding>
       </key>
@@ -354,6 +412,7 @@ Approach at 140 mph with Flaps down (155 with Torpedo loaded). Threshold speed i
   <nasal>
    <beaufighter>
      <file>Aircraft/beaufighter/beaufighter.nas</file>
+     <script>init();</script>
    </beaufighter>
    <pilot-g>
      <file>Aircraft/beaufighter/pilot-g.nas</file>
