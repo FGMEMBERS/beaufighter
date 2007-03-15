@@ -205,6 +205,26 @@
     </model>
 
     <model> 
+      <path>Aircraft/beaufighter/Models/eng-temp-p.xml</path>
+      <offsets>
+        <x-m>1.805</x-m>
+        <y-m>0.035</y-m>
+        <z-m>0.20</z-m>
+        <pitch-deg>-20</pitch-deg>
+      </offsets>
+    </model>
+
+    <model>
+      <path>Aircraft/beaufighter/Models/eng-temp-s.xml</path>
+      <offsets>
+        <x-m>1.805</x-m>
+        <y-m>0.095</y-m>
+        <z-m>0.20</z-m>
+        <pitch-deg>-20</pitch-deg>
+      </offsets>
+    </model>
+
+    <model> 
       <path>Aircraft/beaufighter/Models/boost-p.xml</path>
       <offsets> 
         <x-m>1.805</x-m>
