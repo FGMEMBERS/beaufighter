@@ -1081,7 +1081,6 @@ kids 0
 OBJECT poly
 name "bezelinside"
 loc 0.0166914 -1.74444 -4.40997e-10
-texture "large-bezel.rgb"
 crease 61.000000
 numvert 64
 -0.019117 1.75248 0.0389681
