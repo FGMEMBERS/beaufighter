@@ -22,7 +22,7 @@ don@sol2500.net
   <status>beta</status>
   <flight-model>yasim</flight-model>
   <aero>beaufighter</aero>
-  <fuel-fraction>0.50</fuel-fraction>
+  <fuel-fraction>1.0</fuel-fraction>
 
   <virtual-cockpit archive="y">true</virtual-cockpit>
   <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
@@ -228,23 +228,31 @@ Approach at 140 mph with Flaps down (155 with Torpedo loaded). Threshold speed i
      </cdoor>
    </doors>
    <armament>
+     <trigger type="bool">false</trigger>
+     <pair1 type="bool">false</pair1>
+     <pair2 type="bool">false</pair2>
+     <pair3 type="bool">false</pair3>
+     <pair4 type="bool">false</pair4>
      <station>
        <loaded type="bool">true</loaded>
+       <release-all type="bool">false</release-all>
      </station>
    </armament>
    <engines>
       <engine n="0">
-        <magnetos>3</magnetos>
+        <magnetos>0</magnetos>
         <boost type="double">0.0</boost>
       </engine>
       <engine n="1">
-        <magnetos>3</magnetos>
+        <magnetos>0</magnetos>
         <boost type="double">0.0</boost>
       </engine>
    </engines>
    <fuel>
      <jett-p type="int">0</jett-p>
      <jett-s type="int">0</jett-s>
+     <switch-position-port type = "int">-1</switch-position-port>
+     <switch-position-starb type = "int">1</switch-position-starb>
    </fuel>
    <gear>
      <tailwheel-lock>true</tailwheel-lock>
@@ -258,15 +266,17 @@ Approach at 140 mph with Flaps down (155 with Torpedo loaded). Threshold speed i
     <gun-sight-dimmer type="float">0.0</gun-sight-dimmer>
   </switches>
  </controls>
-
+<!--
  <engines>
+
   <engine>
    <rpm type="double">700</rpm>
   </engine>
   <engine>
    <rpm type="double">700</rpm>
   </engine>
- </engines>  
+ </engines> 
+--> 
  <!-- map key for booster (supercharger) -->
  <input>
     <keyboard>
@@ -312,7 +322,30 @@ Approach at 140 mph with Flaps down (155 with Torpedo loaded). Threshold speed i
             <property>controls/gear/tailwheel-lock</property>
           </binding>
       </key>
-
+    <key n="102">
+  <name>f</name>
+  <desc>port fuel tank select</desc>
+  <binding>
+  <command>property-adjust</command>
+   <property>controls/fuel/switch-position-port</property>
+   <step>1</step>
+   <min>-1</min>
+   <max>2</max>
+   <wrap>1</wrap>
+  </binding>
+  </key> 
+    <key n="70">
+  <name>F</name>
+  <desc>starboard fuel tank select</desc>
+  <binding>
+  <command>property-adjust</command>
+   <property>controls/fuel/switch-position-starb</property>
+   <step>1</step>
+   <min>1</min>
+   <max>4</max>
+   <wrap>1</wrap>
+  </binding>
+  </key> 
       <key n="67">
         <name>C</name>
         <desc>Toggle Cockpit door</desc>
@@ -321,8 +354,8 @@ Approach at 140 mph with Flaps down (155 with Torpedo loaded). Threshold speed i
           <script>beaufighter.toggle_cdoor()</script>
         </binding>
       </key>
-      <key n="70">
-        <name>F</name>
+      <key n="83">
+        <name>S</name>
         <desc>Toggle Front-Door</desc>
         <binding n="0">
           <command>nasal</command>
@@ -401,15 +434,7 @@ Approach at 140 mph with Flaps down (155 with Torpedo loaded). Threshold speed i
 
      </keyboard>
  </input>
-<!--
- <yasim>
-   <weights>
-     <torpedo-lbs>1700.0</torpedo-lbs>
-   </weights>
- </yasim>
--->
-
-  <nasal>
+<nasal>
    <beaufighter>
      <file>Aircraft/beaufighter/beaufighter.nas</file>
      <script>init();</script>
@@ -418,9 +443,9 @@ Approach at 140 mph with Flaps down (155 with Torpedo loaded). Threshold speed i
      <file>Aircraft/beaufighter/pilot-g.nas</file>
    </pilot-g>
 <!--
-   <dialog>
-      <file>Aircraft/beaufighter/dialog.nas</file>
-   </dialog>
+   <fuel>
+     <file>Aircraft/beaufighter/fuel.nas</file>
+   </fuel>
 -->
   </nasal>
 

@@ -3,7 +3,24 @@ init = func {
   setprop ("/autopilot/locks/altitude" , "none" );
  main_loop();
 }
-
+setlistener("/controls/fuel/switch-position-port", func {
+	position=cmdarg().getValue();
+    setprop("/consumables/fuel/tank[0]/selected",0);
+    setprop("/consumables/fuel/tank[1]/selected",0);
+    if(position >= 0.0){
+		setprop("/consumables/fuel/tank[" ~ position ~ "]/selected",1);
+		setprop("/engines/engine[0]/out-of-fuel",0);
+        };    
+    },1);
+setlistener("/controls/fuel/switch-position-starb", func {
+	position=cmdarg().getValue();
+    setprop("/consumables/fuel/tank[2]/selected",0);
+    setprop("/consumables/fuel/tank[3]/selected",0);
+    if(position >= 2.0){
+		setprop("/consumables/fuel/tank[" ~ position ~ "]/selected",1);
+		setprop("/engines/engine[0]/out-of-fuel",0);
+        };    
+    },1);
 
 main_loop = func {
   cview = getprop("/sim/current-view/view-number");

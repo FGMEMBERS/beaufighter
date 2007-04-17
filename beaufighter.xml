@@ -24,11 +24,11 @@ YASim aerodynamic model for a Bristol Beaufighter
 
 <!-- Cruise configuration -->
 <cruise speed="220" alt="15000">
-  <control-setting axis="/controls/engines/engine[0]/throttle" value="0.8"/>
+  <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
   <control-setting axis="/controls/engines/engine[0]/mixture" value="1.00"/>
   <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
   <control-setting axis="/controls/engines/engine[0]/boost" value="0.5"/>
-  <control-setting axis="/controls/engines/engine[1]/throttle" value="0.8"/>
+  <control-setting axis="/controls/engines/engine[1]/throttle" value="1.0"/>
   <control-setting axis="/controls/engines/engine[1]/mixture" value="1.00"/>
   <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="1.0"/>
   <control-setting axis="/controls/engines/engine[1]/boost" value="1.0"/>
@@ -125,8 +125,11 @@ YASim aerodynamic model for a Bristol Beaufighter
   <actionpt x="-0.63" y="2.87" z="-0.08"/>
   <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE" />
   <piston-engine
-    eng-power="1725" eng-rpm="2900"
-    turbo-mul="5.5" wastegate-mp="61"
+    eng-power="1725"
+    eng-rpm="2900"
+    turbo-mul="5.5"
+    wastegate-mp="61"
+    displacement="2360"
     >
     <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
     <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
@@ -148,8 +151,11 @@ YASim aerodynamic model for a Bristol Beaufighter
   <actionpt x="-0.63" y="-2.87" z="-0.08"/>
   <control-input axis="/controls/engines/engine[1]/propeller-pitch" control="ADVANCE" />
   <piston-engine
-    eng-power="1725" eng-rpm="2900"
-    turbo-mul="5.5" wastegate-mp="61"
+    eng-power="1725" 
+    eng-rpm="2900"
+    turbo-mul="5.5" 
+    wastegate-mp="61"
+    displacement="2360"
     >
     <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
     <control-input axis="/controls/engines/engine[1]/starter" control="STARTER"/>
@@ -161,13 +167,7 @@ YASim aerodynamic model for a Bristol Beaufighter
 
 </propeller>
 
-<!-- Tail wheel -->
 
-<gear x="-10.565" y="0" z="-0.779" compression="0.2">
-  <control-input axis="/controls/gear/tailwheel-lock" control="CASTERING" 
-                 src0="0" src1="1"
-                 dst0="1" dst1="0"/>
-</gear>
 
  <!-- left main -->
 <gear x="-2.357" y="2.9" z="-2.65" compression="0.4" spring="0.7" damp="3.0">
@@ -187,12 +187,22 @@ YASim aerodynamic model for a Bristol Beaufighter
   <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
 </gear>
 
+<!-- Tail wheel -->
 
-<tank x="-3.254" y="1.5" z="-0.046" capacity="1507"/> 
+<gear x="-10.565" y="0" z="-0.779" compression="0.2" dfric="0.5" sfric ="0.3">
+  <control-input axis="/controls/gear/tailwheel-lock" control="CASTERING" 
+                 src0="0" src1="1"
+                 dst0="1" dst1="0"/>
+  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+</gear>
+
 <tank x="-3.2" y="3.9" z="-0.04" capacity="696"/> 
+<tank x="-3.254" y="1.5" z="-0.046" capacity="1507"/> 
 
+<tank x="-3.2" y="-3.9" z="-0.04" capacity="696"/>
 <tank x="-3.254" y="-1.5" z="-0.046" capacity="1507"/> 
-<tank x="-3.2" y="-3.9" z="-0.04" capacity="696"/> 
+ 
 
 <!-- pilot -->
 <ballast x="-2.6" y="0" z="0.4" mass="180"/>

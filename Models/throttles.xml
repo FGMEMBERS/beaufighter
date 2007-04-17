@@ -1,0 +1,127 @@
+<PropertyList>
+
+ <path>quadrant.ac</path>
+  
+ <animation>
+  <type>rotate</type>
+  <object-name>portknob</object-name>
+  <object-name>portknob_fwd</object-name>
+  <object-name>portlever</object-name>
+  <property>/controls/engines/engine[0]/throttle</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>80</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>stbdknob</object-name>
+  <object-name>stbdknob_fwd</object-name>
+  <object-name>stblever</object-name>
+  <property>/controls/engines/engine[1]/throttle</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>80</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>portknob_fwd</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/engines/engine[0]/throttle</property>
+    <step>0.2</step>
+    <min>0</min>
+    <max>1</max>
+    <wrap>0</wrap>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>portknob</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/engines/engine[0]/throttle</property>
+    <step>-0.2</step>
+    <min>0</min>
+    <max>1</max>
+    <wrap>0</wrap>
+    </binding>
+  </action>
+</animation>
+ <animation>
+  <type>pick</type>
+  <object-name>stbdknob_fwd</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/engines/engine[1]/throttle</property>
+    <step>0.2</step>
+    <min>0</min>
+    <max>1</max>
+    <wrap>0</wrap>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>stbdknob</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/engines/engine[1]/throttle</property>
+    <step>-0.2</step>
+    <min>0</min>
+    <max>1</max>
+    <wrap>0</wrap>
+    </binding>
+  </action>
+</animation>
+
+</PropertyList>

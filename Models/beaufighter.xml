@@ -260,7 +260,22 @@
         <z-m>0.33</z-m>
       </offsets>
     </model>
-
+    <model> 
+      <path>Aircraft/beaufighter/Models/ignition_p.xml</path>
+      <offsets> 
+       <x-m>1.799</x-m>
+        <y-m>-0.1</y-m>
+        <z-m>0.22</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/beaufighter/Models/ignition_s.xml</path>
+      <offsets> 
+       <x-m>1.799</x-m>
+        <y-m>-0.04</y-m>
+        <z-m>0.22</z-m>
+      </offsets>
+    </model>
  <!-- Gun Sight -->
 
     <model> 
@@ -280,7 +295,39 @@
         <z-m>0.60</z-m>
       </offsets>
     </model>
-
+<!--left-panel-->
+    <model> 
+      <path>Aircraft/beaufighter/Models/fuelcocks.xml</path>
+      <offsets> 
+        <x-m>2.58</x-m>
+        <y-m>-0.43</y-m>
+        <z-m>0.52</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/beaufighter/Models/throttles.xml</path>
+      <offsets> 
+        <x-m>2.19</x-m>
+        <y-m>-0.29</y-m>
+        <z-m>0.16</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/beaufighter/Models/pitch.xml</path>
+      <offsets> 
+        <x-m>2.19</x-m>
+        <y-m>-0.45</y-m>
+        <z-m>0.17</z-m>
+      </offsets>
+    </model>
+    <model> 
+      <path>Aircraft/beaufighter/Models/flapgear.xml</path>
+      <offsets> 
+        <x-m>1.8</x-m>
+        <y-m>-0.29</y-m>
+        <z-m>0.15</z-m>
+      </offsets>
+    </model>
 
  <animation>
   <type>rotate</type>
@@ -603,7 +650,7 @@
 <animation>
   <type>rotate</type>
   <object-name>rightgear</object-name>
-  <property>/gear/gear[0]/position-norm</property>
+  <property>/gear/gear[1]/position-norm</property>
   <interpolation>
 <entry>
     <ind>0.0</ind>
@@ -634,7 +681,7 @@
 <animation>
   <type>rotate</type>
   <object-name>rightgearp1</object-name>
-  <property>/gear/gear[0]/position-norm</property>
+  <property>/gear/gear[1]/position-norm</property>
   <interpolation>
 <entry>
     <ind>0.0</ind>
@@ -665,7 +712,7 @@
 <animation>
   <type>rotate</type>
   <object-name>rightgearp1</object-name>
-  <property>/gear/gear[0]/position-norm</property>
+  <property>/gear/gear[1]/position-norm</property>
   <interpolation>
 <entry>
     <ind>0.0</ind>
@@ -696,7 +743,7 @@
 <animation>
   <type>rotate</type>
   <object-name>rightgearp2</object-name>
-  <property>/gear/gear[0]/position-norm</property>
+  <property>/gear/gear[1]/position-norm</property>
   <interpolation>
 <entry>
     <ind>0.0</ind>
@@ -727,7 +774,7 @@
  <animation>
   <type>rotate</type>
   <object-name>rightwheelstop</object-name>
-  <property>/gear/gear[0]/position-norm</property>
+  <property>/gear/gear[1]/position-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -757,7 +804,7 @@
  <animation>
   <type>rotate</type>
   <object-name>rightgeardoorl</object-name>
-  <property>/gear/gear[0]/position-norm</property>
+  <property>/gear/gear[1]/position-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -787,7 +834,7 @@
  <animation>
   <type>rotate</type>
   <object-name>rightgeardoorr</object-name>
-  <property>/gear/gear[0]/position-norm</property>
+  <property>/gear/gear[1]/position-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -818,7 +865,7 @@
  <animation>
   <type>rotate</type>
   <object-name>tailwheel</object-name>
-  <property>/gear/gear[1]/position-norm</property>
+  <property>/gear/gear[2]/position-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -848,7 +895,7 @@
 <animation>
   <type>rotate</type>
   <object-name>tailgear</object-name>
-  <property>/gear/gear[1]/position-norm</property>
+  <property>/gear/gear[2]/position-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
