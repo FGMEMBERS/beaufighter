@@ -49,7 +49,6 @@ don@sol2500.net
      </pilot>
    </crew>
   </model> 
-  <number-views type="int" archive="y">7</number-views>
   <view n="0">
    <internal archive="y">true</internal>
    <config>
@@ -89,8 +88,8 @@ don@sol2500.net
     <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
    </config>
   </view>
-  <view n="6">
-   <name>interiour view</name>
+  <view n="100">
+   <name>interior view</name>
    <type>lookfrom</type>
    <internal archive="y">true</internal>
     <config>
