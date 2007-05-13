@@ -88,6 +88,13 @@ don@sol2500.net
     <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
    </config>
   </view>
+
+  <view n="6">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
+   </config>
+  </view>
+
   <view n="100">
    <name>interior view</name>
    <type>lookfrom</type>
