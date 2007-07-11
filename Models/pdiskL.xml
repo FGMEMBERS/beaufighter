@@ -38,7 +38,7 @@
   <object-name>noshadow.fpdisk</object-name>
   <condition>
    <greater-than>
-    <property>/engines/engine[0]/rpm</property>
+    <property>engines/engine[0]/rpm</property>
     <value>2000</value>
    </greater-than>
   </condition>
@@ -47,7 +47,7 @@
 <animation>
   <type>spin</type>
   <object-name>noshadow.spdisk</object-name>
-    <property>/engines/engine[0]/rpm</property>
+    <property>engines/engine[0]/rpm</property>
     <factor>0.35</factor>
   <center>
    <x-m>0.0</x-m>
@@ -64,7 +64,7 @@
 <animation>
   <type>spin</type>
   <object-name>noshadow.fpdisk</object-name>
-    <property>/engines/engine[0]/rpm</property>
+    <property>engines/engine[0]/rpm</property>
     <factor>0.01</factor>
   <center>
    <x-m>0.0</x-m>

@@ -21,7 +21,7 @@ don@sol2500.net
   <author>Detlef Faber</author>
   <status>beta</status>
   <flight-model>yasim</flight-model>
-  <aero>beaufighter</aero>
+  <aero>beaufighter-yasim</aero>
   <fuel-fraction>1.0</fuel-fraction>
 
   <virtual-cockpit archive="y">true</virtual-cockpit>

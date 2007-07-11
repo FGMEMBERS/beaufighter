@@ -24,11 +24,11 @@ setlistener("/controls/fuel/switch-position-starb", func {
 
 main_loop = func {
   cview = getprop("/sim/current-view/view-number");
-    if (cview == 6) {
+    if (cview == 7) {
       aphmode = getprop ("/autopilot/locks/heading");
       apvmode = getprop ("/autopilot/locks/altitude");
-      print (aphmode);
-      print (apvmode);
+#      print (aphmode);
+#      print (apvmode);
       if (aphmode == "none" ) {
         setprop ("/autopilot/locks/heading", "wing-leveler");
         setprop ("/autopilot/htempmode", 1 );
