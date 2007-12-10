@@ -8,6 +8,7 @@
 
 
 	<model>
+		<nopreview/>
 		<path>Aircraft/beaufighter/Models/equipment.xml</path>
 	</model>
 
@@ -1236,6 +1237,7 @@
 
   <model> 
    <path>Aircraft/beaufighter/Models/blackout.xml</path>
+		<nopreview/>
    <name>Blackout</name>
     <offsets> 
      <x-m>2.6000</x-m>
@@ -1266,6 +1268,7 @@
 
   <model> 
    <path>Aircraft/beaufighter/Models/blaze-lu.xml</path>
+		<nopreview/>
    <name>Blaze-lu</name>
     <offsets> 
      <x-m>2.2</x-m>
@@ -1275,6 +1278,7 @@
   </model>
   <model> 
    <path>Aircraft/beaufighter/Models/blaze-ld.xml</path>
+		<nopreview/>
    <name>Blaze-ld</name>
     <offsets> 
      <x-m>1.6</x-m>
@@ -1284,6 +1288,7 @@
   </model>
   <model> 
    <path>Aircraft/beaufighter/Models/blaze-ru.xml</path>
+		<nopreview/>
    <name>Blaze-ru</name>
     <offsets> 
      <x-m>2.2</x-m>
@@ -1293,6 +1298,7 @@
   </model>
   <model> 
    <path>Aircraft/beaufighter/Models/blaze-rd.xml</path>
+		<nopreview/>
    <name>Blaze-rd</name>
     <offsets> 
      <x-m>1.6</x-m>
@@ -1305,6 +1311,7 @@
     <model> 
       <path>Aircraft/beaufighter/Models/pilot.xml</path>
 	  <name>pilot</name>
+		<nopreview/>
       <offsets> 
         <x-m>2.41</x-m>
         <y-m>-0.0</y-m>
@@ -1326,6 +1333,7 @@
     <model> 
       <path>Aircraft/beaufighter/Models/crew.xml</path>
 	  <name>crew</name>
+		<nopreview/>
       <offsets> 
         <x-m>6.15</x-m>
         <y-m>0.0</y-m>
@@ -1355,6 +1363,7 @@
     </model>
   <model>
     <name>pdiskL</name>
+		<nopreview/>
     <path>Aircraft/beaufighter/Models/pdiskL.xml</path>
     <offsets>
    <x-m>0.407</x-m>
@@ -1390,6 +1399,7 @@
  </animation>
   <model>
     <name>pdiskR</name>
+		<nopreview/>
     <path>Aircraft/beaufighter/Models/pdiskR.xml</path>
     <offsets>
    <x-m>0.407</x-m>
