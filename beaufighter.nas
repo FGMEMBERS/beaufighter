@@ -1,6 +1,25 @@
 init = func {
   setprop ("/autopilot/locks/heading" , "none" );
   setprop ("/autopilot/locks/altitude" , "none" );
+
+  if (getprop("/controls/engines/engine[0]/on-startup-running") == 1) {
+    setprop("/consumables/fuel/tank[1]/selected",1);
+    setprop("/controls/engines/engine[0]/magnetos",3);
+    setprop("/controls/engines/engine[0]/coolflap-auto",1);
+#    setprop("/controls/engines/engine[0]/radlever",1);
+    setprop("/engines/engine[0]/oil-visc",1);
+    setprop("/engines/engine[0]/rpm",800);
+    setprop("/engines/engine[0]/engine-running",1);
+	}
+  if (getprop("/controls/engines/engine[1]/on-startup-running") == 1) {
+    setprop("/consumables/fuel/tank[3]/selected",1);
+    setprop("/controls/engines/engine[1]/magnetos",3);
+    setprop("/controls/engines/engine[1]/coolflap-auto",1);
+#    setprop("/controls/engines/engine[1]/radlever",1);
+    setprop("/engines/engine[1]/oil-visc",1);
+    setprop("/engines/engine[1]/rpm",800);
+    setprop("/engines/engine[1]/engine-running",1);
+	}
  main_loop();
 }
 setlistener("/controls/fuel/switch-position-port", func {
@@ -22,9 +41,40 @@ setlistener("/controls/fuel/switch-position-starb", func {
         };    
     },1);
 
+#	setlistener("/sim/model/beaufighter/weapons/impact/Torpedo", func {
+#		var node = props.globals.getNode(cmdarg().getValue(), 1);
+#		var impact = geo.Coord.new().set_latlon(
+#				node.getNode("impact/latitude-deg").getValue(),
+#				node.getNode("impact/longitude-deg").getValue(),
+#				node.getNode("impact/elevation-m").getValue());
+
+#		geo.put_model("Aircraft/bo105/Models/hot.ac", impact,
+		#geo.put_model("Models/fgfsdb/coolingtower.xml", impact,
+#				node.getNode("impact/heading-deg").getValue(),
+#				node.getNode("impact/pitch-deg").getValue(),
+#				node.getNode("impact/roll-deg").getValue());
+#		screen.log.write(sprintf("%.3f km",
+#				geo.aircraft_position().distance_to(impact) / 1000), 1, 0.9, 0.9);
+
+
+#	});
+
+#	setlistener("/sim/model/beaufighter/weapons/impact/rp", func {
+#		var node = props.globals.getNode(cmdarg().getValue(), 1);
+#		var impact = geo.Coord.new().set_latlon(
+#				node.getNode("impact/latitude-deg").getValue(),
+#				node.getNode("impact/longitude-deg").getValue(),
+#				node.getNode("impact/elevation-m").getValue());
+
+#		geo.put_model("Aircraft/beaufighter/Models/explode.osg", impact,
+#				node.getNode("impact/heading-deg").getValue(),
+#				node.getNode("impact/pitch-deg").getValue(),
+#				node.getNode("impact/roll-deg").getValue());
+#	});
+
 main_loop = func {
   cview = getprop("/sim/current-view/view-number");
-    if (cview == 7) {
+    if (cview >= 7) {
       aphmode = getprop ("/autopilot/locks/heading");
       apvmode = getprop ("/autopilot/locks/altitude");
 #      print (aphmode);
@@ -38,6 +88,30 @@ main_loop = func {
         setprop ("autopilot/vtempmode" , 1 );
       }
 
+#### Gun view corners
+				if (cview == 8) {
+					viewhead = getprop ("sim/current-view/heading-offset-deg");
+					viewpit = getprop ("sim/current-view/pitch-offset-deg");
+					setprop ("controls/armament/reargun/heading-offset-deg", viewhead + 180 );
+					setprop ("controls/armament/reargun/pitch-offset-deg", viewpit + 180 );
+					if (viewhead > 180){
+						if (viewhead <335.0){
+							setprop ("sim/current-view/heading-offset-deg", "335.0");
+							} 
+						}
+						else {
+							if (viewhead >25.0){
+							setprop ("sim/current-view/heading-offset-deg", "25.0");
+							}
+					}
+					if (viewpit < 1.0) {
+							setprop ("sim/current-view/pitch-offset-deg", "1.0");
+					}	else
+					if (viewpit > 50.0) {
+							setprop ("sim/current-view/pitch-offset-deg", "50.0");
+					}
+				}
+
     } else {
       htempmode = getprop ("/autopilot/htempmode");
       vtempmode = getprop ("/autopilot/vtempmode");
@@ -50,18 +124,23 @@ main_loop = func {
         setprop ("/autopilot/vtempmode" , 0);
       }
     }
-    settimer(main_loop, 0.5);
+    settimer(main_loop, 0.01);
 } 
 
 
 
 fire_MG = func {
  if (getprop("/controls/armament/master-arm") == 1)  {
+		if (getprop("sim/current-view/view-number") == 8) {
+			setprop("/controls/armament/trigger2", 1);
+		} else {
      setprop("/controls/armament/trigger", 1);
      } 
+	}
 }
 stop_MG = func {
      setprop("/controls/armament/trigger", 0); 
+     setprop("/controls/armament/trigger2", 0);
 }
 
 drop_torp = func {
@@ -158,6 +237,24 @@ fuel_jettison = func(side) {
   interpolate("consumables/fuel/tank["~side~"]/level-gal_us", (remaining_inner-20),5);
   interpolate("consumables/fuel/tank["~(side+1)~"]/level-gal_us", (remaining_outer-15),5);
 }
+
+view_fwd = func {
+	curview = getprop ("sim/current-view/view-number");
+	if (curview == 7) {
+		setprop ("sim/current-view/view-number", 0 );
+		} else {
+		setprop ("sim/current-view/view-number", curview + 1);
+		}	
+	}
+view_back = func {
+	curview = getprop ("sim/current-view/view-number");
+	if (curview == 0) {
+		setprop ("sim/current-view/view-number", 7 );
+		} else {
+		setprop ("sim/current-view/view-number", curview - 1);
+		}	
+	}
+
 
 var flash_trigger = props.globals.getNode("controls/armament/trigger", 0);
 aircraft.light.new("sim/model/beaufighter/lighting/flash-lu", [0.05, 0.052], flash_trigger);
