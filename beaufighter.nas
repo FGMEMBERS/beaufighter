@@ -22,8 +22,8 @@ init = func {
 	}
  main_loop();
 }
-setlistener("/controls/fuel/switch-position-port", func {
-	position=cmdarg().getValue();
+setlistener("/controls/fuel/switch-position-port", func(n) {
+	position=n.getValue();
     setprop("/consumables/fuel/tank[0]/selected",0);
     setprop("/consumables/fuel/tank[1]/selected",0);
     if(position >= 0.0){
@@ -31,8 +31,8 @@ setlistener("/controls/fuel/switch-position-port", func {
 		setprop("/engines/engine[0]/out-of-fuel",0);
         };    
     },1);
-setlistener("/controls/fuel/switch-position-starb", func {
-	position=cmdarg().getValue();
+setlistener("/controls/fuel/switch-position-starb", func(n) {
+	position=n.getValue();
     setprop("/consumables/fuel/tank[2]/selected",0);
     setprop("/consumables/fuel/tank[3]/selected",0);
     if(position >= 2.0){
@@ -41,8 +41,8 @@ setlistener("/controls/fuel/switch-position-starb", func {
         };    
     },1);
 
-#	setlistener("/sim/model/beaufighter/weapons/impact/Torpedo", func {
-#		var node = props.globals.getNode(cmdarg().getValue(), 1);
+#	setlistener("/sim/model/beaufighter/weapons/impact/Torpedo", func(n) {
+#		var node = props.globals.getNode(n.getValue(), 1);
 #		var impact = geo.Coord.new().set_latlon(
 #				node.getNode("impact/latitude-deg").getValue(),
 #				node.getNode("impact/longitude-deg").getValue(),
@@ -59,8 +59,8 @@ setlistener("/controls/fuel/switch-position-starb", func {
 
 #	});
 
-#	setlistener("/sim/model/beaufighter/weapons/impact/rp", func {
-#		var node = props.globals.getNode(cmdarg().getValue(), 1);
+#	setlistener("/sim/model/beaufighter/weapons/impact/rp", func(n) {
+#		var node = props.globals.getNode(n.getValue(), 1);
 #		var impact = geo.Coord.new().set_latlon(
 #				node.getNode("impact/latitude-deg").getValue(),
 #				node.getNode("impact/longitude-deg").getValue(),
