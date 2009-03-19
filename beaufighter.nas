@@ -20,7 +20,6 @@ init = func {
     setprop("/engines/engine[1]/rpm",800);
     setprop("/engines/engine[1]/engine-running",1);
 	}
- main_loop();
 }
 setlistener("/controls/fuel/switch-position-port", func(n) {
 	position=n.getValue();
@@ -88,29 +87,6 @@ main_loop = func {
         setprop ("autopilot/vtempmode" , 1 );
       }
 
-#### Gun view corners
-				if (cview == 8) {
-					viewhead = getprop ("sim/current-view/heading-offset-deg");
-					viewpit = getprop ("sim/current-view/pitch-offset-deg");
-					setprop ("controls/armament/reargun/heading-offset-deg", viewhead + 180 );
-					setprop ("controls/armament/reargun/pitch-offset-deg", viewpit + 180 );
-					if (viewhead > 180){
-						if (viewhead <335.0){
-							setprop ("sim/current-view/heading-offset-deg", "335.0");
-							} 
-						}
-						else {
-							if (viewhead >25.0){
-							setprop ("sim/current-view/heading-offset-deg", "25.0");
-							}
-					}
-					if (viewpit < 1.0) {
-							setprop ("sim/current-view/pitch-offset-deg", "1.0");
-					}	else
-					if (viewpit > 50.0) {
-							setprop ("sim/current-view/pitch-offset-deg", "50.0");
-					}
-				}
 
     } else {
       htempmode = getprop ("/autopilot/htempmode");
@@ -262,4 +238,4 @@ aircraft.light.new("sim/model/beaufighter/lighting/flash-ld", [0.052, 0.05], fla
 aircraft.light.new("sim/model/beaufighter/lighting/flash-ru", [0.051, 0.051], flash_trigger);
 aircraft.light.new("sim/model/beaufighter/lighting/flash-rd", [0.0505, 0.0505], flash_trigger);
 
-
+aircraft.livery.init("Aircraft/beaufighter/Models/Liveries", "sim/model/livery/name");

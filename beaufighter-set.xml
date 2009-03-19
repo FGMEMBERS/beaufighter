@@ -17,7 +17,7 @@ don@sol2500.net
 
  <sim>
 
-  <description>Bristol Beaufighter TF X</description>
+  <description>Beaufighter</description>
   <author>Detlef Faber</author>
   <status>beta</status>
   <flight-model>yasim</flight-model>
@@ -42,7 +42,7 @@ don@sol2500.net
   </panel>
 
   <model>
-   <path>Aircraft/beaufighter/Models/beaufighter.xml</path>
+   <path>Aircraft/beaufighter/Models/Beaufighter.xml</path>
    <crew>
      <pilot>
        <visible type="double">1</visible>
@@ -113,6 +113,7 @@ don@sol2500.net
      <pitch-offset-deg>3</pitch-offset-deg>
     </config>
   </view>
+<!--
   <view n="101">
     <type>lookat</type>
     <config>
@@ -139,7 +140,7 @@ don@sol2500.net
      <pitch-offset-deg>25.8</pitch-offset-deg>
     </config>
   </view>
-
+-->
 
  <autopilot>
    <htempmode type="bool">false</htempmode>
@@ -224,7 +225,46 @@ Approach at 140 mph with Flaps down (155 with Torpedo loaded). Threshold speed i
       <opt><name>none</name><lbs>0.0</lbs></opt>
       <opt><name>Rockets</name><lbs>260.0</lbs></opt>
   </weight>
-
+	<menubar>
+		<default>
+			<menu n="10">
+				<label>Beaufighter</label>
+					<enabled type="bool">true</enabled>
+<!--
+					<item>
+						<label>Magically start engine</label>
+						<binding>
+							<command>nasal</command>
+							<script>f4u.magicstart();</script>
+						</binding>
+					</item>
+-->
+					<item>
+						<label>Select Livery</label>
+              <binding>
+                <command>nasal</command>
+                <script>aircraft.livery.dialog.toggle()</script>
+              </binding>
+					</item>
+<!--
+					<item>
+						<label>Select Logo</label>
+              <binding>
+                <command>nasal</command>
+                <script>f4u.logo_dialog.toggle()</script>
+              </binding>
+					</item>
+-->
+      <item>
+        <label>Registration</label>
+        <binding>
+          <command>nasal</command>
+          <script>immat.immat_dialog.toggle()</script>
+        </binding>
+      </item>
+			</menu>
+		</default>
+	</menubar>
  </sim>
 
 
@@ -270,12 +310,12 @@ Approach at 140 mph with Flaps down (155 with Torpedo loaded). Threshold speed i
       <engine n="0">
 				<on-startup-running type="bool">true</on-startup-running>
         <magnetos>0</magnetos>
-        <boost type="double">0.0</boost>
+        <boost type="double">1.0</boost>
       </engine>
       <engine n="1">
 				<on-startup-running type="bool">true</on-startup-running>
         <magnetos>0</magnetos>
-        <boost type="double">0.0</boost>
+        <boost type="double">1.0</boost>
       </engine>
    </engines>
    <fuel>
@@ -385,14 +425,6 @@ Approach at 140 mph with Flaps down (155 with Torpedo loaded). Threshold speed i
         </binding>
       </key>
 
-      <key n="68">
-        <name>D</name>
-        <desc>Toggle Rear-Door</desc>
-        <binding n="0">
-          <command>nasal</command>
-          <script>beaufighter.toggle_rdoor()</script>
-        </binding>
-      </key>
       <key n="100"> 
         <name>d</name>
         <desc>Toggle Master Arm on</desc>
@@ -455,22 +487,6 @@ Approach at 140 mph with Flaps down (155 with Torpedo loaded). Threshold speed i
         </binding>
       </key>
 
-      <key n="118">
-        <name>v</name>
-        <desc>increment view</desc>
-        <binding>
-          <command>nasal</command>
-          <script>beaufighter.view_fwd()</script>
-        </binding>
-			</key>
-      <key n="86">
-        <name>V</name>
-        <desc>decrement view</desc>
-          <binding n="0">
-          <command>nasal</command>
-          <script>beaufighter.view_back()</script>
-        </binding>
-      </key>
      </keyboard>
  </input>
 <nasal>
@@ -478,9 +494,9 @@ Approach at 140 mph with Flaps down (155 with Torpedo loaded). Threshold speed i
      <file>Aircraft/beaufighter/beaufighter.nas</file>
      <script>init();</script>
    </beaufighter>
-   <pilot-g>
-     <file>Aircraft/beaufighter/pilot-g.nas</file>
-   </pilot-g>
+   <immat>
+     <file>Aircraft/beaufighter/Nasal/immat.nas</file>
+   </immat>
 <!--
    <fuel>
      <file>Aircraft/beaufighter/fuel.nas</file>
