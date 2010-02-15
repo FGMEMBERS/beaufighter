@@ -239,3 +239,5 @@ aircraft.light.new("sim/model/beaufighter/lighting/flash-ru", [0.051, 0.051], fl
 aircraft.light.new("sim/model/beaufighter/lighting/flash-rd", [0.0505, 0.0505], flash_trigger);
 
 aircraft.livery.init("Aircraft/beaufighter/Models/Liveries", "sim/model/livery/name");
+
+aircraft.steering.init();
