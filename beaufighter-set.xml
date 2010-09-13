@@ -48,6 +48,11 @@ don@sol2500.net
        <visible type="double">1</visible>
      </pilot>
    </crew>
+		<logo>
+			<display type="int">2</display>
+			<name>FlightGear</name>
+			<texture>../../Generic/Logos/FlightGear.png</texture>
+		</logo>
   </model> 
   <view n="0">
    <internal archive="y">true</internal>
@@ -246,15 +251,24 @@ Approach at 140 mph with Flaps down (155 with Torpedo loaded). Threshold speed i
                 <script>aircraft.livery.dialog.toggle()</script>
               </binding>
 					</item>
-<!--
 					<item>
 						<label>Select Logo</label>
               <binding>
                 <command>nasal</command>
-                <script>f4u.logo_dialog.toggle()</script>
+                <script>beaufighter.logo_dialog.toggle()</script>
               </binding>
 					</item>
--->
+					<item>
+						<label>Toggle Logo display</label>
+        <binding> 
+          <command>property-adjust</command>
+          <property>sim/model/logo/display</property>
+          <step type="int">1</step>
+          <min type="int">0</min>
+          <max type="int">3</max>
+					<wrap>1</wrap>
+        </binding>
+					</item>
       <item>
         <label>Registration</label>
         <binding>

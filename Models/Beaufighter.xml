@@ -10,7 +10,7 @@
     <load>
       var update = aircraft.overlay_update.new();
       update.add("Aircraft/beaufighter/Models/AI-Liveries", "sim/model/livery/file");
-      # update.add("Aircraft/beaufighter/Models/logos", "sim/multiplay/generic/string");
+      update.add("Aircraft/Generic/Logos", "sim/multiplay/generic/string");
     </load>
     <unload>
       update.stop();
@@ -1084,6 +1084,34 @@
    <z>0.0</z>
   </axis>
  </animation>
+
+ <animation>
+    <type>material</type>
+      <object-name>logo.L</object-name>
+      <object-name>logo.R</object-name>
+        <texture-prop>sim/model/logo/texture</texture-prop>
+  </animation>
+ <animation>
+  <type>select</type>
+      <object-name>logo.L</object-name>
+  <condition>
+   <greater-than>
+    <property>sim/model/logo/display</property>
+    <value>0</value>
+   </greater-than>
+  </condition>
+ </animation>
+ <animation>
+  <type>select</type>
+      <object-name>logo.R</object-name>
+  <condition>
+   <greater-than>
+    <property>sim/model/logo/display</property>
+    <value>1</value>
+   </greater-than>
+  </condition>
+ </animation>
+
   <animation>
     <type>material</type>
     <object-name>fuselage</object-name>

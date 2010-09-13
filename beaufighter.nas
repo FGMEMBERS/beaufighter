@@ -240,4 +240,6 @@ aircraft.light.new("sim/model/beaufighter/lighting/flash-rd", [0.0505, 0.0505], 
 
 aircraft.livery.init("Aircraft/beaufighter/Models/Liveries", "sim/model/livery/name");
 
+var logo_dialog = gui.OverlaySelector.new("Select Logo", "Aircraft/Generic/Logos", "sim/model/logo/name", nil, "sim/multiplay/generic/string");
+
 aircraft.steering.init();
