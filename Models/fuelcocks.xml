@@ -1,0 +1,108 @@
+<PropertyList>
+
+ <path>fuelcocks.ac</path>
+  
+<animation>
+<type>rotate</type>
+  <object-name>port</object-name>
+  <property>/controls/fuel/switch-position-port</property>
+<factor>90.0</factor>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+</animation>
+<animation>
+<type>rotate</type>
+  <object-name>starboard</object-name>
+  <property>/controls/fuel/switch-position-starb</property>
+<factor>90.0</factor>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+</animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>pick_s.R</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/fuel/switch-position-starb</property>
+    <step>1.0</step>
+    <min>1</min>
+    <max>3</max>
+    <wrap>0</wrap>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <visible>false</visible>
+  <object-name>pick_s.L</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/fuel/switch-position-starb</property>
+    <step>-1.0</step>
+    <min>1</min>
+    <max>3</max>
+    <wrap>0</wrap>
+    </binding>
+  </action>
+</animation>
+ <animation>
+  <type>pick</type>
+  <object-name>pick_p.R</object-name>
+  <visible>false</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/fuel/switch-position-port</property>
+    <step>1.0</step>
+    <min>-1</min>
+    <max>1</max>
+    <wrap>0</wrap>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <visible>false</visible>
+  <object-name>pick_p.L</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/fuel/switch-position-port</property>
+    <step>-1.0</step>
+    <min>-1</min>
+    <max>1</max>
+    <wrap>0</wrap>
+    </binding>
+  </action>
+</animation>
+</PropertyList>

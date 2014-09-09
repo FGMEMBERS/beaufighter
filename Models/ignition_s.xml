@@ -1,0 +1,112 @@
+<PropertyList>
+
+ <path>ignition.ac</path>
+<animation>
+  <type>rotate</type>
+  <object-name>left</object-name>
+  <object-name>left_on</object-name>
+  <property>controls/engines/engine[1]/magnetos</property>
+  <factor>180</factor>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>  
+
+<animation>
+  <type>select</type>
+  <object-name>right_on</object-name>
+  <condition>
+    <greater-than>
+    <property>controls/engines/engine[1]/magnetos</property>
+    <value>1</value>
+  </greater-than>
+  </condition>
+</animation>
+<animation>
+  <type>select</type>
+  <object-name>right</object-name>
+  <condition>
+    <less-than>
+    <property>controls/engines/engine[1]/magnetos</property>
+    <value>2</value>
+  </less-than>
+
+  </condition>
+</animation>
+
+
+ <animation>
+  <type>pick</type>
+  <object-name>left</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/engines/engine[1]/magnetos</property>
+    <step>1.0</step>
+    <min>0</min>
+    <max>3</max>
+    <wrap>0</wrap>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>left_on</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/engines/engine[1]/magnetos</property>
+    <step>-1.0</step>
+    <min>0</min>
+    <max>3</max>
+    <wrap>0</wrap>
+    </binding>
+  </action>
+</animation>
+ <animation>
+  <type>pick</type>
+  <object-name>right</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/engines/engine[1]/magnetos</property>
+    <step>2.0</step>
+    <min>0</min>
+    <max>3</max>
+    <wrap>0</wrap>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>right_on</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/engines/engine[1]/magnetos</property>
+    <step>-2.0</step>
+    <min>0</min>
+    <max>3</max>
+    <wrap>0</wrap>
+    </binding>
+  </action>
+</animation>
+
+</PropertyList>

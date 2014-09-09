@@ -1,0 +1,525 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+Beaufighter simulation config. This files ties together all the components
+used by FGFS to represent the Beaufighter. Components include the flight data 
+model, instrument panel, and external 3D model.
+
+May 2006 Detlef Faber 
+
+http://www.sol2500.net/flightgear
+
+don@sol2500.net
+************************************************************************
+-->
+
+<PropertyList>
+
+ <sim>
+
+  <description>Beaufighter</description>
+  <author>Detlef Faber</author>
+  <status>beta</status>
+  <flight-model>yasim</flight-model>
+  <aero>beaufighter-yasim</aero>
+  <fuel-fraction>1.0</fuel-fraction>
+
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+  <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+  <sound>
+   <path>Aircraft/p51d/p51d-sound.xml</path>
+  </sound>
+
+  <submodels> 
+    <serviceable type="bool">true</serviceable>
+    <path>Aircraft/beaufighter/Models/submodels.xml</path>
+  </submodels>
+
+  <panel>
+  <path>Aircraft/Generic/Panels/generic-vfr-panel.xml</path>
+  <visibility>false</visibility>
+  </panel>
+
+  <model>
+   <path>Aircraft/beaufighter/Models/Beaufighter.xml</path>
+   <crew>
+     <pilot>
+       <visible type="double">1</visible>
+     </pilot>
+   </crew>
+		<logo>
+			<display type="int">2</display>
+			<name>FlightGear</name>
+			<texture>../../Generic/Logos/FlightGear.png</texture>
+		</logo>
+  </model> 
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+    <x-offset-m archive="y" type="double">0.0</x-offset-m>
+    <y-offset-m archive="y" type="double">1.0</y-offset-m>
+    <z-offset-m archive="y" type="double">2.6</z-offset-m>
+    <pitch-offset-deg>-17.5</pitch-offset-deg>
+   </config>
+  </view>
+
+  <view n="1">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="2">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="3">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="4">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="5">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="6">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="100">
+   <name>interior view</name>
+   <type>lookfrom</type>
+   <internal archive="y">true</internal>
+    <config>
+        <from-model type="bool">true</from-model>
+        <from-model-idx type="int">0</from-model-idx>
+        <ground-level-nearplane-m type="double">0.05f</ground-level-nearplane-m>
+        <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        <default-pitch-deg type="double">0</default-pitch-deg>
+        <default-heading-deg type="double">0</default-heading-deg>
+        <front-direction-deg type="double">0</front-direction-deg>
+     <x-offset-m archive="y" type="double">0.0</x-offset-m>
+     <y-offset-m archive="y" type="double">1.3</y-offset-m>
+     <z-offset-m archive="y" type="double">6.05</z-offset-m>
+     <pitch-offset-deg>3</pitch-offset-deg>
+    </config>
+  </view>
+<!--
+  <view n="101">
+    <type>lookat</type>
+    <config>
+      <from-model type="bool">false</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+      <eye-lat-deg-path>/position/latitude-deg</eye-lat-deg-path>
+      <eye-lon-deg-path>/position/longitude-deg</eye-lon-deg-path>
+      <eye-alt-ft-path>/position/altitude-ft</eye-alt-ft-path>
+      <eye-pitch-deg-path>/orientation/pitch-deg</eye-pitch-deg-path>
+      <eye-roll-deg-path>/orientation/roll-deg</eye-roll-deg-path>
+      <eye-heading-deg-path>/orientation/heading-deg</eye-heading-deg-path>
+
+      <at-model type="bool">true</at-model>
+      <at-model-idx type="int">0</at-model-idx>
+      <target-y-offset-m type="double">1.33</target-y-offset-m>
+      <target-z-offset-m type="double">6.75</target-z-offset-m>
+
+      <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+      <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+
+     <x-offset-m archive="y" type="double">0.1</x-offset-m>
+     <y-offset-m archive="y" type="double">0.0</y-offset-m>
+     <z-offset-m archive="y" type="double">0.7</z-offset-m>
+     <pitch-offset-deg>25.8</pitch-offset-deg>
+    </config>
+  </view>
+-->
+
+ <autopilot>
+   <htempmode type="bool">false</htempmode>
+   <vtempmode type="bool">false</vtempmode>
+   <config>
+     <min-climb-speed-kt type="float">70.0</min-climb-speed-kt>
+     <best-climb-speed-kt type="float">75.0</best-climb-speed-kt>
+     <target-climb-rate-fpm type="float">500.0</target-climb-rate-fpm>
+     <target-descent-rate-fpm type="float">1000.0</target-descent-rate-fpm>
+     <elevator-adj-factor type="float">4000.0</elevator-adj-factor>
+     <integral-contribution type="float">0.01</integral-contribution>
+     <zero-pitch-throttle type="float">0.45</zero-pitch-throttle>
+     <zero-pitch-trim-full-throttle type="float">0.14</zero-pitch-trim-full-throttle>
+   </config>
+ </autopilot>
+
+  <hud>
+   <enable3d>false</enable3d>
+  </hud>
+
+  <help>
+    <key>
+      <name>C</name>
+      <desc>toggle cockpit door</desc>
+    </key>
+    <key>
+      <name>Ctrl-B</name>
+      <desc>toggle engine boost</desc>
+    </key>
+    <key>
+      <name>Ctrl-L</name>
+      <desc>toggle Tailwheel lock</desc>
+    </key>
+    <key>
+      <name>d/D</name>
+      <desc>Master Arm on/off</desc>
+    </key>
+    <key>
+      <name>Ctrl-e</name>
+      <desc>release Torpedo</desc>
+    </key>
+    <key>
+      <name>E</name>
+      <desc>fire Rockets</desc>
+    </key>
+    <key>
+      <name>Ctrl-G</name>
+      <desc>toggle gunsight stow</desc>
+    </key>
+    <text>Bristol Beaufighter TFX
+Select Weapon Loadout via the Fuel and Payload Dialog. Note that Beaufighters never carried both, Rockets and Torpedo. First the rocket armed Beaufighters attacked with Cannons and Rockets to keep the Anti Aircraft guns down while the heavy Torpedo armed Aircraft made their run.
+
+---Take off---
+With Torpedo loaded, take off with Flaps one Click down. Lift Tailwheel early and take off at 120 mph (135 with Torpedo loaded)
+---Cruise---
+At heigths at or above 15000 ft you may engage Engine Boost.
+---Landing---
+Approach at 140 mph with Flaps down (155 with Torpedo loaded). Threshold speed is about 110 mph. </text>
+  </help>
+
+
+  <weight n="0">
+      <name>Center</name>
+      <weight-lb>0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0</lbs></opt>
+      <opt><name>Torpedo</name><lbs>1700.0</lbs></opt>
+  </weight>
+
+  <weight n="1">
+      <name>Left Wing</name>
+      <weight-lb type="double">0.0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0.0</lbs></opt>
+      <opt><name>Rockets</name><lbs>260.0</lbs></opt>
+  </weight>
+
+  <weight n="2">
+      <name>Right Wing</name>
+      <weight-lb type="double">0</weight-lb>
+      <selected>none</selected>
+      <opt><name>none</name><lbs>0.0</lbs></opt>
+      <opt><name>Rockets</name><lbs>260.0</lbs></opt>
+  </weight>
+	<menubar>
+		<default>
+			<menu n="10">
+				<label>Beaufighter</label>
+					<enabled type="bool">true</enabled>
+<!--
+					<item>
+						<label>Magically start engine</label>
+						<binding>
+							<command>nasal</command>
+							<script>f4u.magicstart();</script>
+						</binding>
+					</item>
+-->
+					<item>
+						<label>Select Livery</label>
+              <binding>
+                <command>nasal</command>
+                <script>aircraft.livery.dialog.toggle()</script>
+              </binding>
+					</item>
+					<item>
+						<label>Select Logo</label>
+              <binding>
+                <command>nasal</command>
+                <script>beaufighter.logo_dialog.toggle()</script>
+              </binding>
+					</item>
+					<item>
+						<label>Toggle Logo display</label>
+        <binding> 
+          <command>property-adjust</command>
+          <property>sim/model/logo/display</property>
+          <step type="int">1</step>
+          <min type="int">0</min>
+          <max type="int">3</max>
+					<wrap>1</wrap>
+        </binding>
+					</item>
+      <item>
+        <label>Registration</label>
+        <binding>
+          <command>nasal</command>
+          <script>immat.immat_dialog.toggle()</script>
+        </binding>
+      </item>
+			</menu>
+		</default>
+	</menubar>
+ </sim>
+
+
+
+
+
+ <!-- set prop for the manual "bookmark" arrow on the remote compas -->
+ <instrumentation>
+    <magnetic-compass>
+       <bookmark-heading-deg type="double">43.0</bookmark-heading-deg>
+    </magnetic-compass>
+ </instrumentation>
+
+ <!-- set up control properties for YASim -->
+ <controls>
+   <doors>
+     <fdoor>
+        <position-norm type="double">0.0</position-norm>
+     </fdoor>
+     <rdoor>
+        <position-norm type="double">0.0</position-norm>
+     </rdoor>
+     <cdoor>
+        <position-norm type="double">0.0</position-norm>
+     </cdoor>
+   </doors>
+   <armament>
+     <trigger type="bool">false</trigger>
+     <pair1 type="bool">false</pair1>
+     <pair2 type="bool">false</pair2>
+     <pair3 type="bool">false</pair3>
+     <pair4 type="bool">false</pair4>
+	 <reargun>
+		<heading-offset-deg type="double">0</heading-offset-deg>
+		<pitch-offset-deg type="double">0</pitch-offset-deg>
+	 </reargun>
+     <station>
+       <loaded type="bool">true</loaded>
+       <release-all type="bool">false</release-all>
+     </station>
+   </armament>
+   <engines>
+      <engine n="0">
+				<on-startup-running type="bool">true</on-startup-running>
+        <magnetos>0</magnetos>
+        <boost type="double">1.0</boost>
+      </engine>
+      <engine n="1">
+				<on-startup-running type="bool">true</on-startup-running>
+        <magnetos>0</magnetos>
+        <boost type="double">1.0</boost>
+      </engine>
+   </engines>
+   <fuel>
+     <jett-p type="int">0</jett-p>
+     <jett-s type="int">0</jett-s>
+     <switch-position-port type = "int">-1</switch-position-port>
+     <switch-position-starb type = "int">1</switch-position-starb>
+   </fuel>
+   <gear>
+     <tailwheel-lock>true</tailwheel-lock>
+     <rdoor-pos-norm type="float">0.0</rdoor-pos-norm>
+     <cdoor-pos-norm type="float">0.0</cdoor-pos-norm>
+     <fdoor-pos-norm type="float">0.0</fdoor-pos-norm>
+  </gear>
+  <switches>
+    <gun-sight-main type="int">1</gun-sight-main>
+    <gun-sight-stow type="float">0.0</gun-sight-stow>
+    <gun-sight-dimmer type="float">0.0</gun-sight-dimmer>
+  </switches>
+ </controls>
+<!--
+ <engines>
+
+  <engine>
+   <rpm type="double">700</rpm>
+  </engine>
+  <engine>
+   <rpm type="double">700</rpm>
+  </engine>
+ </engines> 
+--> 
+ <!-- map key for booster (supercharger) -->
+ <input>
+    <keyboard>
+      <key n="2">
+        <name>Ctrl-B</name>
+        <desc>Toggle engine boost.</desc>
+        <binding>
+          <command>property-adjust</command>
+          <property>/controls/engines/engine[0]/boost</property>
+          <step type="double">0.5</step>
+          <min type="double">0.0</min>
+          <max type="double">1.5</max>
+        </binding>
+        <binding>
+          <condition>
+          <greater-than>
+            <property>/controls/engines/engine[0]/boost</property>
+            <value type="double">1.0001</value>
+          </greater-than>
+          </condition>
+          <command>property-assign</command>
+          <property>/controls/engines/engine[0]/boost</property>
+          <value type="double">0.0</value>
+        </binding>
+        <binding> 	 
+          <condition> 	 
+          <greater-than> 	 
+            <property>/controls/engines/engine[0]/boost</property> 	 
+            <value type="double">0.55</value> 	 
+          </greater-than> 	 
+          </condition> 	 
+          <command>property-assign</command> 	 
+          <property>/controls/engines/engine[0]/boost</property> 	 
+          <value type="double">1.0</value> 	 
+        </binding>
+      </key>
+
+      <key n="12"> 
+          <name>Ctrl-L</name>
+          <desc>Toggle Tailwheel Lock.</desc>
+          <binding> 
+            <command>property-toggle</command>
+            <property>controls/gear/tailwheel-lock</property>
+          </binding>
+      </key>
+    <key n="102">
+  <name>f</name>
+  <desc>port fuel tank select</desc>
+  <binding>
+  <command>property-adjust</command>
+   <property>controls/fuel/switch-position-port</property>
+   <step>1</step>
+   <min>-1</min>
+   <max>2</max>
+   <wrap>1</wrap>
+  </binding>
+  </key> 
+    <key n="70">
+  <name>F</name>
+  <desc>starboard fuel tank select</desc>
+  <binding>
+  <command>property-adjust</command>
+   <property>controls/fuel/switch-position-starb</property>
+   <step>1</step>
+   <min>1</min>
+   <max>4</max>
+   <wrap>1</wrap>
+  </binding>
+  </key> 
+      <key n="67">
+        <name>C</name>
+        <desc>Toggle Cockpit door</desc>
+        <binding n="0">
+          <command>nasal</command>
+          <script>beaufighter.toggle_cdoor()</script>
+        </binding>
+      </key>
+
+      <key n="100"> 
+        <name>d</name>
+        <desc>Toggle Master Arm on</desc>
+        <binding> 
+          <command>property-adjust</command>
+          <property>/controls/armament/master-arm</property>
+          <step type="double">1</step>
+          <min type="double">0</min>
+          <max type="double">1</max>
+        </binding>
+      </key>
+      <key n="68"> 
+        <name>D</name>
+        <desc>Toggle Master Arm off</desc>
+        <binding> 
+          <command>property-adjust</command>
+          <property>/controls/armament/master-arm</property>
+          <step type="double">-1</step>
+          <min type="double">0</min>
+          <max type="double">1</max>
+        </binding>
+      </key>
+      <key n="101">
+        <name>e</name>
+        <desc>Fire Cannons</desc>
+        <binding>
+          <command>nasal</command>
+          <script>beaufighter.fire_MG()</script>
+        </binding>
+        <mod-up>
+          <binding>
+            <command>nasal</command>
+            <script>beaufighter.stop_MG()</script>
+          </binding>
+        </mod-up>
+      </key>
+      <key n="5">
+        <name>Ctrl-e</name>
+        <desc>Release Torpedo</desc>
+        <binding n="0">
+          <command>nasal</command>
+          <script>beaufighter.drop_torp()</script>
+          <value type="bool">true</value>
+        </binding>
+      </key>
+      <key n="69">
+        <name>E</name>
+        <desc>Fire Rockets</desc>
+          <binding n="0">
+          <command>nasal</command>
+          <script>beaufighter.fire_rp()</script>
+        </binding>
+      </key>
+      <key n="7">
+        <name>Ctrl-G</name>
+        <desc>Toggle gunsight stow</desc>
+          <binding n="0">
+          <command>nasal</command>
+          <script>beaufighter.toggle_gunsight()</script>
+        </binding>
+      </key>
+
+     </keyboard>
+ </input>
+<nasal>
+   <beaufighter>
+     <file>Aircraft/beaufighter/beaufighter.nas</file>
+     <script>init();</script>
+   </beaufighter>
+   <immat>
+     <file>Aircraft/beaufighter/Nasal/immat.nas</file>
+   </immat>
+<!--
+   <fuel>
+     <file>Aircraft/beaufighter/fuel.nas</file>
+   </fuel>
+-->
+  </nasal>
+
+</PropertyList>
+
+
+
+

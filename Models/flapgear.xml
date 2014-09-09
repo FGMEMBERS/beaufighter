@@ -1,0 +1,177 @@
+<PropertyList>
+
+ <path>flapgear.ac</path>
+  
+ <animation>
+  <type>rotate</type>
+  <object-name>gearknob</object-name>
+  <object-name>gearlever</object-name>
+  <property>/controls/gear/gear-down</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>-60</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>0</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+<!--
+ <animation>
+  <type>rotate</type>
+  <object-name>stbdknob</object-name>
+  <object-name>stbdknob_fwd</object-name>
+  <object-name>stblever</object-name>
+  <property>/controls/engines/engine[1]/propeller-pitch</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>80</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+-->
+<animation>
+  <type>translate</type>
+  <object-name>indicator</object-name>
+  <property>/controls/flight/flaps</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0.0</dep>
+   </entry>
+   <entry>
+    <ind>1.00</ind>
+    <dep>0.097</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>-0.75</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>gearknob</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-toggle</command>
+      <property>/controls/gear/gear-down</property>
+    </binding>
+  </action>
+</animation>
+<!--
+<animation>
+  <type>pick</type>
+  <object-name>portknob</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/engines/engine[0]/propeller-pitch</property>
+    <step>-0.2</step>
+    <min>0</min>
+    <max>1</max>
+    <wrap>0</wrap>
+    </binding>
+  </action>
+</animation>
+ <animation>
+  <type>pick</type>
+  <object-name>stbdknob_fwd</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/engines/engine[1]/propeller-pitch</property>
+    <step>0.2</step>
+    <min>0</min>
+    <max>1</max>
+    <wrap>0</wrap>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>stbdknob</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/engines/engine[1]/propeller-pitch</property>
+    <step>-0.2</step>
+    <min>0</min>
+    <max>1</max>
+    <wrap>0</wrap>
+    </binding>
+  </action>
+</animation>
+-->
+<animation>
+  <type>pick</type>
+  <object-name>flapknob</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/flight/flaps</property>
+    <step>0.013</step>
+    <min>0</min>
+    <max>1</max>
+    <wrap>0</wrap>
+    </binding>
+  </action>
+</animation>
+ <animation>
+  <type>pick</type>
+  <object-name>flapknob_fwd</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/flight/flaps</property>
+    <step>-0.014</step>
+    <min>0</min>
+    <max>1</max>
+    <wrap>0</wrap>
+    </binding>
+  </action>
+</animation>
+
+</PropertyList>

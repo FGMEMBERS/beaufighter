@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+<!-- This part should be the same for any 3D panel.  Customize the actions section -->
+<PropertyList>
+  <name>Main Panel Hotspots</name>
+  <background>Aircraft/Generic/Panels/Textures/transparent-bg.rgb</background>
+  <w>1024</w>
+  <h>768</h>
+  <y-offset>0</y-offset>
+  <x-offset>0</x-offset>
+  <instruments>
+    <instrument>
+      <name>Panel</name>
+	  <x>512</x>
+      <y>384</y>
+      <w>1024</w>
+      <h>768</h>
+      <w-base>1024</w-base>
+      <h-base>1024</h-base>
+      <layers>
+        <layer>
+          <name>background</name>
+          <texture>
+            <path>Aircraft/Generic/Panels/Textures/transparent-bg.rgb</path>
+            <x1>0.0</x1>
+            <y1>0.0</y1>
+            <x2>1.0</x2>
+            <y2>1.0</y2>
+          </texture>
+        </layer>
+      </layers>
+
+      <!-- define hotspot actions below -->
+      <actions>
+        <!-- RGS Dimmer Switch -->
+        <action>
+          <name>RGS dimmer up</name>
+          <button>0</button>
+          <x>-200</x>
+          <y>400</y>
+          <w>30</w>
+          <h>30</h>
+          <binding>
+            <command>property-adjust</command>
+            <property>controls/switches/gun-sight-dimmer</property>
+            <step>0.1</step>
+            <min>0</min>
+            <max>1</max>
+            <wrap>false</wrap>
+          </binding>
+        </action>
+        <!-- altimeter hotspots -->
+        <action> 
+          <name>calibrate fine</name>
+          <button>0</button>
+          <x>-115</x>
+          <y>-70</y>
+          <w>15</w>
+          <h>35</h>
+          <binding> 
+            <command>property-adjust</command>
+            <property>/instrumentation/altimeter/setting-inhg</property>
+            <step>-0.01</step>
+            <min>26.0</min>
+            <max>33.0</max>
+            <wrap>false</wrap>
+          </binding>
+        </action>
+        <action> 
+          <name>calibrate fine</name>
+          <button>0</button>
+          <x>-100</x>
+          <y>-70</y>
+          <w>15</w>
+          <h>35</h>
+          <binding> 
+            <command>property-adjust</command>
+            <property>/instrumentation/altimeter/setting-inhg</property>
+            <step>0.01</step>
+            <min>26.0</min>
+            <max>33.0</max>
+            <wrap>false</wrap>
+          </binding>
+        </action>
+        <!-- Fuel Jettison Port -->
+        <action>
+          <name>Fuel Jettison Port</name>
+          <button>0</button>
+          <x>-138</x>
+          <y>-200</y>
+          <w>30</w>
+          <h>60</h>
+          <binding>
+            <command>nasal</command>
+            <script>beaufighter.fuel_jettison(0)</script>
+          </binding>
+          <binding>
+            <command>property-assign</command>
+            <property>controls/fuel/jett-p</property>
+            <value type="float">1</value>
+          </binding>
+          <mod-up>
+            <binding>
+              <command>property-assign</command>
+              <property>controls/fuel/jett-p</property>
+              <value type="float">0</value>
+            </binding>
+          </mod-up>
+        </action>
+        <!-- Fuel Jettison Stbd -->
+        <action>
+          <name>Fuel Jettison Stbd</name>
+          <button>0</button>
+          <x>-80</x>
+          <y>-200</y>
+          <w>30</w>
+          <h>60</h>
+          <binding>
+            <command>nasal</command>
+            <script>beaufighter.fuel_jettison(2)</script>
+          </binding>
+          <binding>
+            <command>property-assign</command>
+            <property>controls/fuel/jett-s</property>
+            <value type="float">1</value>
+          </binding>
+          <mod-up>
+            <binding>
+              <command>property-assign</command>
+              <property>controls/fuel/jett-s</property>
+              <value type="float">0</value>
+            </binding>
+          </mod-up>
+        </action>
+        <!-- Cockpit Lighting Dimmer -->
+        <action>
+          <name>Cockpit Dimmer</name>
+          <button>0</button>
+          <x>275</x>
+          <y>160</y>
+          <w>25</w>
+          <h>35</h>
+          <binding>
+            <command>property-adjust</command>
+            <property>controls/lighting/panel-norm</property>
+            <step>0.05</step>
+            <min>0</min>
+            <max>0.4</max>
+            <wrap>true</wrap>
+          </binding>
+        </action>
+        <!-- Starter Button Port -->
+        <action>
+          <name>Starter Button Port</name>
+          <button>0</button>
+          <x>275</x>
+          <y>-140</y>
+          <w>25</w>
+          <h>35</h>
+          <binding>
+            <command>property-assign</command>
+            <property>controls/engines/engine[0]/starter</property>
+            <value type="bool">true</value>
+          </binding>
+          <mod-up>
+            <binding>
+              <command>property-assign</command>
+              <property>controls/engines/engine[0]/starter</property>
+              <value type="bool">false</value>
+            </binding>
+          </mod-up>
+        </action>
+        <!-- Starter Button Stbd -->
+        <action>
+          <name>Starter Button Stbd</name>
+          <button>0</button>
+          <x>315</x>
+          <y>-140</y>
+          <w>25</w>
+          <h>35</h>
+          <binding>
+            <command>property-assign</command>
+            <property>controls/engines/engine[1]/starter</property>
+            <value type="bool">true</value>
+          </binding>
+          <mod-up>
+            <binding>
+              <command>property-assign</command>
+              <property>controls/engines/engine[1]/starter</property>
+              <value type="bool">false</value>
+            </binding>
+          </mod-up>
+        </action>
+
+      </actions>
+    </instrument>
+  </instruments>
+</PropertyList>

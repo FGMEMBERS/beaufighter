@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">RAF Coastal Command</name>
+
+            <texture>beau-1.png</texture>
+	 <letter_color>
+	  <diffuse>
+	   <red>0.4</red>
+	   <green>0.0</green>
+	   <blue>0.0</blue>
+	  </diffuse>
+
+	  <ambient>
+	   <red>0.4</red>
+	   <green>0.0</green>
+	   <blue>0.0</blue>
+	  </ambient>
+
+	  <specular>
+	   <red>0.4</red>
+	   <green>0.0</green>
+	   <blue>0.0</blue>
+	  </specular>
+
+	  <emission>
+	   <red>0.0</red>
+	   <green>0.0</green>
+	   <blue>0.0</blue>
+	  </emission>
+
+	  <transparency>
+	   <alpha>1.0</alpha>
+	  </transparency>
+
+	  <shininess>2</shininess>
+	 </letter_color>
+
+        </livery>
+    </model>
+</sim>
+</PropertyList>
