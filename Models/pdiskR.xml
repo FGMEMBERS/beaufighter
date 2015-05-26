@@ -8,7 +8,7 @@
 	
   <model>
     <name>pdisk</name>
-    <path>Aircraft/mosquito/Models/pdisk.ac</path>
+    <path>Aircraft/beaufighter/Models/pdisk.ac</path>
     <offsets>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
